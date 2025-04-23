@@ -1,6 +1,7 @@
 obj-$(NAUT_CONFIG_X86_64_HOST) += x64/
 obj-$(NAUT_CONFIG_ARCH_RISCV) += riscv/
 obj-$(NAUT_CONFIG_ARCH_ARM64) += arm64/
+obj-$(NAUT_CONFIG_ARCH_ARM) += arm/
 
 # Old, not really supported. TODO: fix this (make them platforms under x86)
 obj-$(NAUT_CONFIG_HVM_HRT) += hrt/

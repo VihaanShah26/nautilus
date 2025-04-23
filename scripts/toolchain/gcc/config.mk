@@ -13,6 +13,10 @@ GCC_CROSS_COMPILE ?= riscv64-linux-gnu-
 CFLAGS += -finline-atomics
 endif
 
+ifdef NAUT_CONFIG_ARCH_ARM
+GCC_CROSS_COMPILE ?= arm-none-eabi-
+endif
+
 CC = $(GCC_CROSS_COMPILE)gcc
 LD = $(GCC_CROSS_COMPILE)ld
 AS = $(GCC_CROSS_COMPILE)as

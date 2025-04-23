@@ -53,6 +53,9 @@ endif
 ifdef NAUT_CONFIG_ARCH_ARM64
 ARCH ?= arm64
 endif
+ifdef NAUT_CONFIG_ARCH_ARM
+ARCH ?= arm
+endif
 
 ARCH_SCRIPTS_DIR:=$(SCRIPTS_DIR)/arch/$(ARCH)
 -include $(ARCH_SCRIPTS_DIR)/config.mk

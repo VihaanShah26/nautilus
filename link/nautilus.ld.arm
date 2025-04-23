@@ -1,0 +1,61 @@
+OUTPUT_ARCH( "arm" )
+ENTRY( nautilus_entry )
+
+SECTIONS
+{
+  . = NAUT_CONFIG_KERNEL_LINK_ADDR;
+
+  PROVIDE(kernel_start = .);
+
+  _loadStart = .;
+  .text ALIGN(0x1000) : {
+    _textStart = .;
+    *(.text.boot*)
+    *(.text* .text.*)
+    *(.gnu.linkonce.t*)
+    . = ALIGN(0x1000);
+    _textEnd = .;
+    etext = .;
+    . = ALIGN(0x1000);
+  }
+
+  .data ALIGN(0x10000) : {
+    _dataStart = .;
+    *(.sdata .sdata.*) /* do not need to distinguish this from .data */
+    /* . = ALIGN(16); */
+    *(.data .data.*)
+    *(.gnu.linkonce.d*)
+    /* . = ALIGN(16); */
+    *(.tdata .tdata.*)
+    _dataEnd = .;
+  }
+
+  .got ALIGN(0x1000) : {
+      *(.got*)
+      *(.gnu.linkconce.got*)
+  }
+
+/* Needs to be RW */
+#include "init_stages.ld.inc"
+
+  _rodataStart = .;
+#include "rodata_common.ld.inc"
+  _rodataEnd = .;
+
+  _loadEnd = .;
+
+  .bss ALIGN(0x1000) : {
+    . = ALIGN(16);
+    _bssStart = .;
+    *(.sbss .sbss.*) /* do not need to distinguish this from .bss */
+    . = ALIGN(16);
+    *(.bss .bss.*);
+    *(.gnu.linkonce.b*)
+    . = ALIGN(16);
+    *(.tbss .tbss*);
+    _bssEnd = .;
+  }
+
+
+  PROVIDE(kernel_end = .);
+}

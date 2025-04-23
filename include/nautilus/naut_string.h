@@ -110,6 +110,8 @@ char * strstr (const char * haystack, const char * needle);
 #include <arch/x64/naut_string.h>
 #elif NAUT_CONFIG_ARCH_ARM64
 #include <arch/arm64/naut_string.h>
+#elif NAUT_CONFIG_ARCH_ARM
+#include <arch/arm/naut_string.h>
 #else
 #error "Unsupported Arch"
 #endif
