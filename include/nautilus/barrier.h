@@ -99,6 +99,11 @@ static inline void nk_counting_barrier(volatile nk_counting_barrier_t *b)
                         __sync_synchronize();
 			*countp = 0;
                         __sync_synchronize();
+    #elif NAUT_CONFIG_ARCH_ARM
+			*curp ^= 0x1;
+                        __sync_synchronize();
+			*countp = 0;
+                        __sync_synchronize();
     #elif NAUT_CONFIG_ARCH_X86
 			*curp ^= 0x1;
 			__asm__ __volatile__ ("mfence" : : : "memory");
@@ -115,6 +120,9 @@ static inline void nk_counting_barrier(volatile nk_counting_barrier_t *b)
 	    __asm__ __volatile__ ("nop");
 	}
     #elif NAUT_CONFIG_ARCH_ARM64
+			// TODO(arm64): mfence. Do this with __sync_synchronize();
+        __sync_synchronize();
+    #elif NAUT_CONFIG_ARCH_ARM
 			// TODO(arm64): mfence. Do this with __sync_synchronize();
         __sync_synchronize();
     #elif NAUT_CONFIG_ARCH_X86

@@ -91,6 +91,8 @@ void* arch_instr_ptr_reg(struct nk_regs *regs);
 #include <arch/riscv/arch.h>
 #elif NAUT_CONFIG_ARCH_ARM64
 #include <arch/arm64/arch.h>
+#elif NAUT_CONFIG_ARCH_ARM
+#include <arch/arm/arch.h>
 #else
 #error "Unsupported architecture"
 #endif

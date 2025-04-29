@@ -285,6 +285,8 @@ nk_get_nautilus_info (void)
 //#include <arch/riscv/math_emul.h>
 #elif defined NAUT_CONFIG_ARCH_ARM64
 //#include <arch/arm64/main.h>
+#elif defined NAUT_CONFIG_ARCH_ARM
+//#include <arch/arm/main.h> 
 #else
 #error "Unsupported architecture"
 #endif

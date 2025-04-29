@@ -26,6 +26,10 @@ menu "Platform"
 
 		config ARCH_ARM
 		        bool
+			select SPARSE_IRQ
+			select HAS_PCI 
+			select USE_PCI_ECAM
+			select USE_FDT 
 
     choice
         prompt "Platform Selection"
