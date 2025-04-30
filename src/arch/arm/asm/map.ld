@@ -1,6 +1,7 @@
 MEMORY
 {
-    MEM : ORIGIN = 0x0, LENGTH = 0x4000
+    FLASH (rwx) : ORIGIN = 0x0000, LENGTH = 0x2000
+    RAM   (rwx): ORIGIN = 0x3000, LENGTH = 0x2000
 }
 
 SECTIONS
@@ -8,6 +9,9 @@ SECTIONS
     .text : {
         *(.vectors*)
         *(.text*)
-    } > MEM
+    } > FLASH
+    .stack :{
+	*(.stack*)
+    }>RAM
 }
 
