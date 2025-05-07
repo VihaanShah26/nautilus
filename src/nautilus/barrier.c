@@ -115,7 +115,7 @@ nk_barrier_destroy (nk_barrier_t * barrier)
 
     DEBUG_PRINT("Destroying barrier (%p)\n", (void*)barrier);
 
-    bspin_lock(&barrier->lock);
+    bspin_lock((int*) &barrier->lock);
     
     if (likely(barrier->remaining == barrier->init_count)) {
         res = 0;
@@ -124,7 +124,7 @@ nk_barrier_destroy (nk_barrier_t * barrier)
         ERROR_PRINT("Someone still waiting at barrier, cannot destroy\n");
         res = -EINVAL;
     }
-    bspin_unlock(&barrier->lock);
+    bspin_unlock((int*) &barrier->lock);
 
     return res;
 }
@@ -150,13 +150,13 @@ nk_barrier_wait (nk_barrier_t * barrier)
 
     DEBUG_PRINT("Thread (%p) entering barrier (%p)\n", (void*)get_cur_thread(), (void*)barrier);
 
-    bspin_lock(&barrier->lock);
+    bspin_lock((int*) &barrier->lock);
 
     if (--barrier->remaining == 0) {
         res = NK_BARRIER_LAST;
         atomic_cmpswap(barrier->notify, 0, 1);
     } else {
-        bspin_unlock(&barrier->lock);
+        bspin_unlock((int*) &barrier->lock);
         BARRIER_WHILE(barrier->notify != 1);
     }
 
@@ -166,7 +166,7 @@ nk_barrier_wait (nk_barrier_t * barrier)
 
     if (atomic_inc_val(barrier->remaining) == init_count) {
         atomic_cmpswap(barrier->notify, 1, 0); 
-        bspin_unlock(&barrier->lock);
+        bspin_unlock((int*) &barrier->lock);
     }
     
     return res;

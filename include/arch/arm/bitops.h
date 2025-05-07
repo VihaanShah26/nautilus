@@ -14,6 +14,50 @@
 #error only <lib/bitops.h> can be included directly
 #endif
 
+#include <nautilus/atomic.h> 
+#include <nautilus/intrinsics.h> 
+
+/**
+ * __clz - count leading zeros in word
+ */
+static inline unsigned long __clz(unsigned long word)
+{
+  return (unsigned long)__builtin_clz(word);
+}
+
+static inline int test_bit(unsigned int nr, const volatile unsigned int *addr){
+	return 1U & (addr[BIT_WORD((uint32_t)nr)] >> ((uint32_t)nr % BITS_PER_INT)); 
+}
+
+static inline int test_and_set_bit(int nr, volatile unsigned int * addr)
+{
+    addr += BIT_WORD((uint32_t)nr);
+    unsigned int bit = 1U<<((uint32_t)nr % BITS_PER_INT);
+
+    unsigned int old;
+    old = atomic_or(*(unsigned int*)addr, bit);
+    return old & bit;
+}
+
+/**
+ * test_and_clear_bit - Clear a bit and return its old value
+ * @nr: Bit to clear
+ * @addr: Address to count from
+ *
+ * This operation is atomic and cannot be reordered.
+ * It also implies a memory barrier.
+ */
+static inline int test_and_clear_bit(int nr, volatile unsigned int * addr)
+{
+  addr += BIT_WORD((uint32_t)nr);
+  unsigned int bit = 1U<<((uint32_t)nr % BITS_PER_INT);
+  
+  unsigned int old; 
+  old = atomic_and(*(unsigned int*)addr, ~bit);
+  return (old & bit);
+}
+
+
 /**
  * __ffs - find first set bit in word
  * @word: The word to search
@@ -24,10 +68,6 @@ static inline unsigned long __ffs(unsigned long word)
 {
     int num = 0;
 
-    if ((word & 0xffffffff) == 0) {
-        num += 32;
-    	word >>= 32;
-    }
     if ((word & 0xffff) == 0) {
     	num += 16;
     	word >>= 16;
@@ -68,10 +108,6 @@ static inline unsigned long __fls(unsigned long word)
 {
 	int num = BITS_PER_LONG - 1;
 
-	if (!(word & (~0ul << 32))) {
-		num -= 32;
-		word <<= 32;
-	}
 	if (!(word & (~0ul << (BITS_PER_LONG-16)))) {
 		num -= 16;
 		word <<= 16;

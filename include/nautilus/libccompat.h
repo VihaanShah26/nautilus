@@ -92,7 +92,7 @@ typedef int clockid_t;
 // 
 typedef long time_t;
 typedef void FILE;
-typedef uint64_t off_t;
+typedef uint32_t off_t;
 
 //Required by Lua 
 typedef long int clock_t;

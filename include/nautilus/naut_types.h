@@ -46,7 +46,7 @@ typedef signed long   slong_t;
 typedef unsigned long ulong_t;
 
 // typedef unsigned long size_t;
-// typedef long          ssize_t;
+typedef uint32_t        ssize_t;
 typedef unsigned long off_t;
 
 //typedef unsigned long long uint64_t;

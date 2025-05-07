@@ -7,6 +7,7 @@
 #include <nautilus/semaphore.h>
 #include <nautilus/waitqueue.h>
 #include <nautilus/atomic.h>
+#include <nautilus/timer.h> 
 
 #define BOGUS_FUN_ERR() ERROR_PRINT("Function (%s) is BOGUS\n", __func__)
 #define BOGUS() BOGUS_FUN_ERR()

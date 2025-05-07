@@ -206,7 +206,7 @@ typedef enum {
 typedef struct nk_wait_queue nk_wait_queue_t;
 
 struct nk_thread {
-    uint64_t rsp;                /* +0  SHOULD NOT CHANGE POSITION */
+    uint32_t rsp;                /* +0  SHOULD NOT CHANGE POSITION */
     void * stack;                /* +8  SHOULD NOT CHANGE POSITION */
     uint16_t fpu_state_offset;   /* +16 SHOULD NOT CHANGE POSITION */
     nk_cache_part_thread_state_t /* +18 SHOULD NOT CHANGE POSITION */

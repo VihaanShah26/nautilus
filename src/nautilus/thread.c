@@ -158,7 +158,7 @@ _nk_thread_init (nk_thread_t * t,
 
 
     t->stack      = stack;
-    t->rsp        = (uint64_t)stack + t->stack_size - (2*sizeof(uint64_t));
+    t->rsp        = (uint32_t)stack + t->stack_size - (2*sizeof(uint64_t));
     t->tid        = atomic_inc(next_tid) + 1;
     t->refcount   = is_detached ? 1 : 2; // thread references itself as well
     t->parent     = parent;
@@ -227,7 +227,7 @@ thread_cleanup (void)
 static inline void thread_print_stack(nk_thread_t *t) {
   uint64_t *base = (uint64_t*)(((uint8_t*)t->stack) + t->stack_size);
   THREAD_DEBUG("Thread %p's Stack: base = %p, rsp = %p\n", (void*)t, base, (uint64_t*)t->rsp);
-  while((uint64_t)base > t->rsp) {
+  while((uint32_t)base > t->rsp) {
     base--;
     THREAD_DEBUG("\t0x%016x\n", *base);
   }
@@ -239,11 +239,11 @@ static inline void thread_print_stack(nk_thread_t *t) {
  * a thread's stack
  */
 void
-thread_push (nk_thread_t * t, uint64_t x)
+thread_push (nk_thread_t * t, uint32_t x)
 {
     THREAD_DEBUG("Pushing 0x%016x onto thread %p's stack\n", x, t);
     t->rsp -= 8;
-    *(uint64_t*)(t->rsp) = x;
+    *(uint32_t*)(t->rsp) = x;
 }
 
 void
@@ -321,6 +321,8 @@ thread_setup_init_stack (nk_thread_t * t, nk_thread_fun_t fun, void * arg)
     #define INTERRUPT_RETURN_OFFSET (GPR_SAVE_SIZE - 0x50)
     #define DAIF_OFFSET (GPR_SAVE_SIZE - 0x60)
 
+
+
     if (fun) {
         thread_push(t, (uint64_t)thread_cleanup);
         thread_push(t, (uint64_t)fun);
@@ -334,6 +336,28 @@ thread_setup_init_stack (nk_thread_t * t, nk_thread_fun_t fun, void * arg)
           (uint64_t)(0b0000<<6);
 #endif
     }
+
+#elif NAUT_CONFIG_ARCH_ARM
+    #define GPR_SAVE_SIZE 0x120
+    #define GPR_X0_OFFSET (GPR_SAVE_SIZE - 0x70 - 0x00)
+    #define GPR_LR_OFFSET (GPR_SAVE_SIZE - 0x70 - 0xa0)
+    #define INTERRUPT_RETURN_OFFSET (GPR_SAVE_SIZE - 0x50)
+    #define DAIF_OFFSET (GPR_SAVE_SIZE - 0x60)
+
+    if (fun) {
+        thread_push(t, (uint32_t)thread_cleanup);
+        thread_push(t, (uint32_t)fun);
+        *(uint32_t*)(t->rsp-GPR_X0_OFFSET) = (uint32_t)arg;
+        *(uint32_t*)(t->rsp-GPR_LR_OFFSET)  = (uint32_t)nk_thread_entry;
+        *(uint32_t*)(t->rsp-INTERRUPT_RETURN_OFFSET) = (uint32_t)0;
+        *(uint32_t*)(t->rsp-DAIF_OFFSET) = 
+#ifdef NAUT_CONFIG_BEANDIP
+          (uint32_t)(0b1111<<6);
+#else
+          (uint32_t)(0b0000<<6);
+#endif
+    }
+
 #endif
 
     t->rsp -= GPR_SAVE_SIZE;                             // account for the GPRS;
@@ -694,9 +718,9 @@ void nk_yield()
 {
     struct nk_thread *me = get_cur_thread();
 
-    spin_lock(&me->lock);
+    spin_lock((spinlock_t*) &me->lock);
 
-    nk_sched_yield(&me->lock);
+    nk_sched_yield((spinlock_t*) &me->lock);
 }
 
 

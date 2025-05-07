@@ -202,7 +202,7 @@ static int
 thread_group_barrier_wait (nk_barrier_t *barrier) {
   int res = 0;
 
-  bspin_lock(&barrier->lock);
+  bspin_lock((int*) &barrier->lock);
 
   DEBUG_BARRIER("Thread (%p) entering barrier (%p)\n", (void*)get_cur_thread(), (void*)barrier);
 
@@ -212,14 +212,14 @@ thread_group_barrier_wait (nk_barrier_t *barrier) {
     DEBUG_BARRIER("Thread (%p): notify\n", (void*)get_cur_thread());
   } else {
     DEBUG_BARRIER("Thread (%p): remaining count = %d\n", (void*)get_cur_thread(), barrier->remaining);
-    bspin_unlock(&barrier->lock);
+    bspin_unlock((int*) &barrier->lock);
     BARRIER_WHILE (barrier->notify != 1);
   }
 
   if (atomic_inc_val(barrier->remaining) == barrier->init_count) {
     atomic_cmpswap(barrier->notify, 1, 0); // the last thread goes out reset notify
     DEBUG_BARRIER("Thread (%p): reset notify\n", (void*)get_cur_thread());
-    bspin_unlock(&barrier->lock);
+    bspin_unlock((int*) &barrier->lock);
   }
 
   DEBUG_BARRIER("Thread (%p) exiting barrier (%p)\n", (void*)get_cur_thread(), (void*)barrier);
@@ -229,11 +229,11 @@ thread_group_barrier_wait (nk_barrier_t *barrier) {
 
 static void
 thread_group_barrier_join (nk_barrier_t *barrier) {
-  bspin_lock(&barrier->lock);
+  bspin_lock((int*) &barrier->lock);
   DEBUG_BARRIER("Thread (%p) joining barrier \n", (void*)get_cur_thread());
   atomic_inc(barrier->init_count);
   atomic_inc(barrier->remaining);
-  bspin_unlock(&barrier->lock);
+  bspin_unlock((int*) &barrier->lock);
 }
 
 static int
@@ -242,7 +242,7 @@ thread_group_barrier_leave (nk_barrier_t *barrier) {
 
   DEBUG_BARRIER("Thread (%p) leaving barrier (%p)\n", (void*)get_cur_thread(), (void*)barrier);
 
-  bspin_lock(&barrier->lock);
+  bspin_lock((int*) &barrier->lock);
 
   atomic_dec(barrier->init_count);
 
@@ -252,7 +252,7 @@ thread_group_barrier_leave (nk_barrier_t *barrier) {
     DEBUG_BARRIER("Thread (%p): notify\n", (void*)get_cur_thread());
   }
 
-  bspin_unlock(&barrier->lock);
+  bspin_unlock((int*) &barrier->lock);
 
   return res;
 }

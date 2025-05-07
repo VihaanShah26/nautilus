@@ -182,7 +182,7 @@ mark_allocated (struct buddy_mempool *mp, struct block *block)
 static inline int
 is_available (struct buddy_mempool *mp, struct block *block)
 {
-    return test_bit(block_to_id(mp, block), mp->tag_bits);
+    return test_bit(block_to_id(mp, block), (int*) mp->tag_bits);
 }
 
 

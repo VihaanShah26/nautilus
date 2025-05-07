@@ -185,6 +185,9 @@ mm_boot_init (ulong_t mbd)
 #ifdef NAUT_CONFIG_ARCH_ARM64
     addr_t kern_end       = (addr_t)&_loadEnd;
 #endif
+#ifdef NAUT_CONFIG_ARCH_ARM
+    addr_t kern_end       = (addr_t)&_loadEnd;
+#endif 
     addr_t pm_start       = round_up(kern_end, PAGE_SIZE);
     boot_mem_info_t * mem = &bootmem;
     ulong_t npages;
@@ -356,12 +359,12 @@ __mm_boot_alloc (ulong_t size, ulong_t align, ulong_t goal)
         i = ALIGN(i, incr);
         if (i >= eidx)
             break;
-        if (test_bit(i, minfo->page_map))
+        if (test_bit(i, (int*)minfo->page_map))
             continue;
         for (j = i + 1; j < i + areasize; ++j) {
             if (j >= eidx)
                 goto fail_block;
-            if (test_bit(j, minfo->page_map))
+            if (test_bit(j,(int*) minfo->page_map))
                 goto fail_block;
         }
 
@@ -424,7 +427,7 @@ found:
 
     BMM_DEBUG("marking blocks [%u - %u] as allocated in the bitmap\n", start, (start+areasize)-1);
     for (i = start; i < start+areasize; i++) {
-        if (unlikely(test_and_set_bit(i, minfo->page_map))) {
+        if (unlikely(test_and_set_bit(i, (int*) minfo->page_map))) {
             BMM_DEBUG("bit %u not set!\n", i);
             panic("bit %u not set!\n", i);
         }
@@ -489,7 +492,7 @@ mm_boot_free (void *addr, ulong_t size)
     eidx = end;
 
     for (i = sidx; i < eidx; i++) {
-        if (unlikely(!test_and_clear_bit(i, minfo->page_map))) {
+        if (unlikely(!test_and_clear_bit(i, (int*) minfo->page_map))) {
             panic("could not free page\n");
         }
     }

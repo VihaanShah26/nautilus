@@ -40,7 +40,7 @@ int __ilog2_u32(uint32_t n)
 	return fls(n) - 1;
 }
 #ifndef NAUT_CONFIG_ARCH_ARM
-static inline __attribute__((const))
+
 int __ilog2_u64(uint64_t n)
 {
 	return fls64(n) - 1;
@@ -127,9 +127,7 @@ unsigned long __roundup_pow_of_two(unsigned long n)
 		(n) & (1ULL <<  0) ?  0 :	\
 		____ilog2_NaN()			\
 				   ) :		\
-	(sizeof(n) <= 4) ?			\
-	__ilog2_u32(n) :			\
-	__ilog2_u64(n)				\
+		__ilog2_u32(n) 			\
  )
 #endif
 
