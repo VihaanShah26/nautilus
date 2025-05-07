@@ -1,8 +1,8 @@
 #if defined(NAUT_CONFIG_ARM_DISCOVERY) 
 MEMORY
 {
-    FLASH (rwx) : ORIGIN = 0x0000, LENGTH = 0x2000
-    RAM   (rwx): ORIGIN = 0x3000, LENGTH = 0x2000
+    FLASH (rwx) : ORIGIN = 0x0000, LENGTH = 0x20000
+    RAM   (rwx): ORIGIN = 0x20000, LENGTH = 0x2000
 }
 #else 
 #error "Please select a specific ARM SoC in the config" 

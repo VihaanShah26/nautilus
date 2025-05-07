@@ -18,8 +18,13 @@ OBJDUMP := llvm-objdump
 
 export GLLVM_OBJCOPY:=$(OBJCOPY)
 
+ifdef NAUT_CONFIG_COMPILE_FOR_SPEED
 COMMON_FLAGS += -O$(NAUT_CONFIG_COMPILER_OPT_LEVEL)  # -fno-delete-null-pointer-checks
-# -O3 will also work - PAD
+endif 
+
+ifdef NAUT_CONFIG_COMPILE_FOR_SIZE
+COMMON_FLAGS += -Os
+endif 
 
 ifdef NAUT_CONFIG_ARCH_X86
 COMMON_FLAGS += --target=x86_64

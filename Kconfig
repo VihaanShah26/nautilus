@@ -257,8 +257,16 @@ menu "Build"
      config USE_WLLVM
        bool "Clang/WLLVM (generates top level bitcode file)" 
     endchoice
-
+choice 
+	prompt "Optimization Target" 
+	default COMPILER_OPT_FOR_SPEED
+	config COMPILER_OPT_FOR_SPEED
+		bool "Optimize for speed"
+	config COMPILER_OPT_FOR_SIZE
+		bool "Optimize for size" 
+endchoice 
     config COMPILER_OPT_LEVEL
+       depends on COMPILER_OPT_FOR_SPEED
        int "Compiler Optimization Level"
        range 0 3
        default 3
