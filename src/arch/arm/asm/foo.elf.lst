@@ -5,7 +5,7 @@ foo.elf:     file format elf32-littlearm
 Disassembly of section .text:
 
 00000000 <vector_table>:
-   0:	0000abc0 	andeq	sl, r0, r0, asr #23
+   0:	00003000 	andeq	r3, r0, r0
    4:	00000199 	muleq	r0, r9, r1
 	...
 
@@ -14,6 +14,11 @@ Disassembly of section .text:
  19a:	2203      	movs	r2, #3
  19c:	188b      	adds	r3, r1, r2
  19e:	f7ff fffe 	bl	19e <reset_handler+0x6>
+
+Disassembly of section .stack:
+
+00003000 <boot_stack>:
+	...
 
 Disassembly of section .ARM.attributes:
 

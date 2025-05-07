@@ -33,7 +33,7 @@
 
 //
 // This code assumes that %gs base (or tp) is pointing to
-// the struct cpu of the running cpu and it assumes the
+// the struct cpu of the running cu and it assumes the
 // specific layout of struct cpu
 //
 
@@ -76,9 +76,9 @@ static inline void preempt_disable()
     if (base) {
 	// per-cpu functional
 #if defined(NAUT_CONFIG_ARCH_RISCV) || defined(NAUT_CONFIG_ARCH_ARM64)
-	atomic_add(*(uint32_t *)((uint64_t)base+PREEMPT_DISABLE_OFFSET),1);
+	atomic_add(*(uint32_t *)((uintptr_t)base+PREEMPT_DISABLE_OFFSET),1);
 #else
-	atomic_add(*(uint16_t *)((uint64_t)base+PREEMPT_DISABLE_OFFSET),1);
+	atomic_add(*(uint16_t *)((uintptr_t)base+PREEMPT_DISABLE_OFFSET),1);
 #endif
     } else {
 	// per-cpu is not running, so we are not going to get preempted anyway
@@ -91,9 +91,9 @@ static inline void preempt_enable()
     if (base) {
 	// per-cpu functional
 #if defined(NAUT_CONFIG_ARCH_RISCV) || defined(NAUT_CONFIG_ARCH_ARM64)
-	atomic_sub(*(uint32_t *)((uint64_t)base+PREEMPT_DISABLE_OFFSET),1);
+	atomic_sub(*(uint32_t *)((uintptr_t)base+PREEMPT_DISABLE_OFFSET),1);
 #else
-	atomic_sub(*(uint16_t *)((uint64_t)base+PREEMPT_DISABLE_OFFSET),1);
+	atomic_sub(*(uint16_t *)((uintptr_t)base+PREEMPT_DISABLE_OFFSET),1);
 #endif
     } else {
 	// per-cpu is not running, so we are not going to get preempted anyway
@@ -109,9 +109,9 @@ static inline void preempt_reset()
     if (base) {
 	// per-cpu functional
 #if defined(NAUT_CONFIG_ARCH_RISCV) || defined(NAUT_CONFIG_ARCH_ARM64)
-	atomic_and(*(uint32_t *)((uint64_t)base+PREEMPT_DISABLE_OFFSET),0);
+	atomic_and(*(uint32_t *)((uintptr_t)base+PREEMPT_DISABLE_OFFSET),0);
 #else
-	atomic_and(*(uint16_t *)((uint64_t)base+PREEMPT_DISABLE_OFFSET),0);
+	atomic_and(*(uint16_t *)((uintptr_t)base+PREEMPT_DISABLE_OFFSET),0);
 #endif
     } else {
 	// per-cpu is not running, so we are not going to get preempted anyway
@@ -124,9 +124,9 @@ static inline int preempt_is_disabled()
     if (base) {
 	// per-cpu functional
 #if defined(NAUT_CONFIG_ARCH_RISCV) || defined(NAUT_CONFIG_ARCH_ARM64)
-	return atomic_add(*(uint32_t *)((uint64_t)base+PREEMPT_DISABLE_OFFSET),0);
+	return atomic_add(*(uint32_t *)((uintptr_t)base+PREEMPT_DISABLE_OFFSET),0);
 #else
-	return atomic_add(*(uint16_t *)((uint64_t)base+PREEMPT_DISABLE_OFFSET),0);
+	return atomic_add(*(uint16_t *)((uintptr_t)base+PREEMPT_DISABLE_OFFSET),0);
 #endif
     } else {
 	// per-cpu is not running, so we are not going to get preempted anyway
@@ -139,9 +139,9 @@ static inline uint16_t interrupt_nesting_level()
     void *base = __cpu_state_get_cpu();
     if (base) {
 #if defined(NAUT_CONFIG_ARCH_RISCV) || defined(NAUT_CONFIG_ARCH_ARM64)
-	return atomic_add(*(uint32_t *)((uint64_t)base+INL_OFFSET),0);
+	return atomic_add(*(uint32_t *)((uintptr_t)base+INL_OFFSET),0);
 #else
-	return atomic_add(*(uint16_t *)((uint64_t)base+INL_OFFSET),0);
+	return atomic_add(*(uint16_t *)((uintptr_t)base+INL_OFFSET),0);
 #endif
     } else {
 	return 0; // no interrupt should be on if we don't have percpu

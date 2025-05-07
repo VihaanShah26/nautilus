@@ -23,6 +23,9 @@
 #ifndef __NAUT_TYPES_H__
 #define __NAUT_TYPES_H__
 
+#include <stdint.h>
+#include <stddef.h>
+
 #ifdef __cplusplus 
 extern "C" {
 #endif
@@ -42,30 +45,30 @@ typedef unsigned long long ullong_t;
 typedef signed long   slong_t;
 typedef unsigned long ulong_t;
 
-typedef unsigned long size_t;
-typedef long          ssize_t;
+// typedef unsigned long size_t;
+// typedef long          ssize_t;
 typedef unsigned long off_t;
 
 //typedef unsigned long long uint64_t;
-typedef unsigned long uint64_t;
+// typedef unsigned long uint64_t;
 //typedef long long          sint64_t;
 typedef long sint64_t;
 
-typedef unsigned int uint32_t;
+// typedef unsigned int uint32_t;
 typedef int          sint32_t;
 
 
-typedef unsigned short uint16_t;
+// typedef unsigned short uint16_t;
 typedef short          sint16_t;
 
-typedef unsigned char uint8_t;
+// typedef unsigned char uint8_t;
 typedef char          sint8_t;
 
 typedef ulong_t addr_t;
 typedef uchar_t bool_t;
 
-typedef unsigned long  uintptr_t;
-typedef long           intptr_t;
+// typedef unsigned long  uintptr_t;
+// typedef long           intptr_t;
 
 // Must be large enough to represent every interrupt vector number for the system
 #ifdef NAUT_CONFIG_ARCH_X86

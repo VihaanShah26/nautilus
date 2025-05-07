@@ -32,13 +32,7 @@
 #ifndef __NAUT_ARM_ARCH_H__
 #define __NAUT_ARM_ARCH_H__
 
-#define NAUT_CONFIG_SPARSE_IRQ 0 
 
-#ifndef NAUT_CONFIG_SPARSE_IRQ
-#error "ARM requires that NAUT_CONFIG_SPARSE_IRQ is enabled!"
-#endif
-
-#define MAX_IRQ_NUM 0
-#define MAX_IVEC_NUM 0
+#define MAX_IRQ_NUM 256
 
 #endif

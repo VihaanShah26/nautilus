@@ -35,15 +35,18 @@
 #include <stddef.h>
 #include <nautilus/naut_string.h>
 #include <nautilus/fmtout.h> /* DHH: for struct Output_Sink */
+#include <nautilus/naut_types.h>
 
+#ifndef CHAR_BIT 
 #define CHAR_BIT 8
+#endif 
 /*
  * DHH: Hack, long long arithmetic requires runtime support.
  * Use unsigned long as greatest unsigned integer supported.
  */
-typedef long intmax_t;
-typedef unsigned long uintmax_t;
-typedef unsigned long uintptr_t;
+// typedef long intmax_t;
+// typedef unsigned long uintmax_t;
+// typedef unsigned long uintptr_t;
 
 /* DHH */
 #define ASSERT(exp) \

@@ -2143,7 +2143,7 @@ _configure_gpudev_console(struct gpudev_console *c)
 {
     int res;
     nk_gpu_dev_video_mode_t  modes[MAX_GPU_MODES_TO_SEARCH];
-    int num_modes = MAX_GPU_MODES_TO_SEARCH;
+    uint32_t num_modes = MAX_GPU_MODES_TO_SEARCH;
 
     res = nk_gpu_dev_get_available_modes(c->dev, modes, &num_modes);
     if(res) {

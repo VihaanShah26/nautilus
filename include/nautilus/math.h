@@ -39,11 +39,13 @@ int __ilog2_u32(uint32_t n)
 {
 	return fls(n) - 1;
 }
+#ifndef NAUT_CONFIG_ARCH_ARM
 static inline __attribute__((const))
 int __ilog2_u64(uint64_t n)
 {
 	return fls64(n) - 1;
 }
+#endif 
 
 /*
  * round up to nearest power of two

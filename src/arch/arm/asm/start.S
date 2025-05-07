@@ -1,8 +1,7 @@
-# this is code from the youtube tutorial 
 .section .vectors
 vector_table:
-    .word 0x22
-    .word reset_handler
+    .word boot_stack
+    .word nautilus_entry
     .zero 400
 
 .section .text
@@ -18,3 +17,8 @@ reset_handler:
     .space 4096
     boot_stack_end:
 
+.global nautilus_entry
+
+nautilus_entry: 
+	mov r1, #0xABCD
+	bl . 

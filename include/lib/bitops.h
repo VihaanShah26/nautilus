@@ -97,6 +97,8 @@
 #include <arch/riscv/bitops.h>
 #elif NAUT_CONFIG_ARCH_ARM64
 #include <arch/arm64/bitops.h>
+#elif NAUT_CONFIG_ARCH_ARM
+#include <arch/arm/bitops.h>
 #elif NAUT_CONFIG_ARCH_X86
 #include <arch/x64/bitops.h>
 #endif
@@ -213,9 +215,11 @@ static inline sint32_t sign_extend32(uint32_t value, int index)
 
 static inline unsigned fls_long(unsigned long l)
 {
-	if (sizeof(l) == 4)
-		return fls(l);
+#ifndef NAUT_CONFIG_ARCH_ARM
 	return fls64(l);
+#else 
+	return fls(l);
+#endif 
 }
 
 /**

@@ -30,6 +30,7 @@ extern "C" {
 #endif
 
 #include <stddef.h>
+#include <nautilus/printk.h> 
 
 struct cpu;
 
@@ -241,8 +242,30 @@ get_cpu (void)
 
 #endif /* NAUT_CONFIG_ARCH_ARM64 */
 
+#ifdef NAUT_CONFIG_ARCH_ARM
+
+
+static inline struct cpu*
+get_cpu (void)
+{
+  struct cpu *c;
+  panic("tried to call get_cpu which is not implemented for ARM yet");  
+  return c;
+}
+
+#define per_cpu_put(var, newval) do { \
+  get_cpu()->var = newval;\
+  } while(0)
+
+#define per_cpu_get(var) (get_cpu()->var)
+    
+#define my_cpu_id() per_cpu_get(id)
+
+#endif /* NAUT_CONFIG_ARCH_ARM */
+
 #ifdef __cplusplus
 }
 #endif
+
 
 #endif /* !__PER_CPU_H__ */

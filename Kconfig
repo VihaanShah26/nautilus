@@ -62,6 +62,9 @@ menu "Platform"
         config ARM_GENERIC
 	    bool "Generic ARM Host"
 	    select ARCH_ARM
+	config ARM_DISCOVERY
+	    bool "smt32vldiscovery"
+	    select ARCH_ARM
 
     endchoice
 
