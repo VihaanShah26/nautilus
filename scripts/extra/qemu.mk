@@ -1,5 +1,4 @@
 
-ifdef QEMU
 
 QEMU_FLAGS += -smp cpus=4
 QEMU_FLAGS += -serial stdio
@@ -7,9 +6,9 @@ QEMU_FLAGS += -serial stdio
 QEMU_FLAGS += -m 2G
 #QEMU_FLAGS += -device virtio-net-pci -nic socket,udp=1000,localaddr=localhost
 
-qemu: $(QEMU_DEPS)
-	$(call quiet-cmd,QEMU,)
-	$(QEMU) $(QEMU_FLAGS)
+#qemu: $(QEMU_DEPS)
+#	$(call quiet-cmd,QEMU,)
+#	$(QEMU) $(QEMU_FLAGS)
 qemu-gdb: $(QEMU_DEPS)
 	$(call quiet-cmd,QEMU,)
 	$(QEMU) $(QEMU_FLAGS) -gdb tcp::1234 -S -no-reboot -no-shutdown
@@ -39,5 +38,15 @@ device-tree-clean: FORCE
 CLEAN_RULES += device-tree-clean
 
 endif
-endif
 
+
+
+
+PROJECT = src/arch/arm/asm/start
+CPU ?= cortex-m33
+BOARD ?= mps2-an505
+
+qemu:
+	arm-none-eabi-as -mthumb -mcpu=$(CPU) -c src/arch/arm/asm/start.S -o src/arch/arm/asm/start.o
+	arm-none-eabi-ld -T link/nautilus.ld.arm src/arch/arm/asm/start.o -o src/arch/arm/asm/start.elf
+	qemu-system-arm -S -M $(BOARD) -cpu $(CPU) -kernel $(PROJECT).elf 

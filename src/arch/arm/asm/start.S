@@ -20,5 +20,5 @@ reset_handler:
 .global nautilus_entry
 
 nautilus_entry: 
-	mov r1, #0xABCD
+	mov r1, #0x1
 	bl . 
