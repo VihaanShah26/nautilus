@@ -8,7 +8,7 @@ MEMORY
 #error "Please select a specific ARM SoC in the config" 
 #endif 
 
-ENTRY(nautilus_entry)
+ENTRY(reset_handler)
 
 SECTIONS
 {

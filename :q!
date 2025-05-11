@@ -16,13 +16,13 @@ reset_handler:
     add r3, r1, r2
     bl .
 
-.global nautilus_entry
-nautilus_entry: 
-	mov r1, #0x1
-	bl . 
 .section .stack
     boot_stack:
     .space 4096
     boot_stack_end:
 
+.global nautilus_entry
 
+nautilus_entry: 
+	mov r1, #0x1
+	bl . 
