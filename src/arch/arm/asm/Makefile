@@ -1,4 +1,4 @@
-obj-y += foo.S
+obj-y += start.o
 
 #PROJECT = foo
 #CPU ?= cortex-m3

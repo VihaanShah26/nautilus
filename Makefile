@@ -34,7 +34,7 @@ include $(SCRIPTS_DIR)/kconfig.mk
 ifndef NAUT_CONFIG_CONFIG
 
 # default to x86 if no config exists yet
-ARCH ?= x64
+ARCH ?= arm
 
 default: no_config_message
 no_config_message:
