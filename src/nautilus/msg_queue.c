@@ -533,7 +533,7 @@ static int _nk_msg_queue_push_pull_timeout(struct nk_msg_queue *q, void **m, uin
 	// the queues we will simultaneously be on
 	nk_wait_queue_t *queues[2] = { pull ? q->pull_wait_queue : q->push_wait_queue, t->waitq} ;
 	// their condition checks
-        int (*condchecks[2])() = { check_queue, check_timer };
+        int (*condchecks[2])(void*) = { check_queue, check_timer };
 	// and state
 	void *states[2] = { &o, &o }; 
 	

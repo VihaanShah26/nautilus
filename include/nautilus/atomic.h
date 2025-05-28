@@ -24,7 +24,55 @@
 #define __ATOMIC_H__
 
 int arch_atomics_enabled(void);
+#ifdef NAUT_CONFIG_ARCH_ARM
+#define atomic_add(var, val) ({ \
+		typeof(var) ret = (var); \
+		(var) += (val); \
+		ret; \
+		})
+#define atomic_sub(var, val) ({ \
+		typeof(var) ret = (var); \
+		(var) -= (val); \
+		ret; \
+		})
+#define atomic_or(var, val) ({ \
+		typeof(var) ret = (var); \
+		(var) |= (val); \
+		ret; \
+		})
 
+#define atomic_and(var, val) ({ \
+		typeof(var) ret = (var); \
+		(var) += (val); \
+		ret; \
+		})
+#define atomic_lock_test_and_set(var, val) ({ \
+		typeof(var) ret = (var); \
+		(var) = (val); \
+		ret; \
+		})
+#define atomic_lock_release(var) do { \
+		(var) = 0; \
+		} while(0)
+#define atomic_bool_cmpswap(var, old, new) ({ \
+      		typeof(var) ret = (!!(var) == !!(old)); \
+      		(var) = (new); \
+    		ret; \
+  })
+#define atomic_cmpswap(var, old, new) ({ \
+      		typeof(var) ret = ((var) == (old)); \
+      		(var) = (new); \
+    		ret; \
+  })
+#define atomic_store(var, val) do { \
+		(var) = (val); \ 
+		} while(0)
+#define atomic_inc(var)       atomic_add((var), 1) 
+#define atomic_dec(var)       atomic_sub((var), 1)
+#define atomic_inc_val(var)  (atomic_add((var), 1) + 1)
+#define atomic_dec_val(var)  (atomic_sub((var), 1) - 1)
+
+#else 
 #define atomic_add(var, val)  ({ \
     typeof(__sync_fetch_and_add((volatile typeof(var)*)&(var), (val))) ret; \
     if(arch_atomics_enabled()) { \
@@ -152,5 +200,8 @@ xchg64 (void ** dst, void * newval)
     return ret;
 }
 #endif
+#endif
+
+
 
 #endif

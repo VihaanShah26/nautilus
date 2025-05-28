@@ -384,7 +384,7 @@ int nk_semaphore_down_timeout(struct nk_semaphore *s, uint64_t timeout_ns)
 	// the queues we will simultaneously be on
 	nk_wait_queue_t *queues[2] = { s->wait_queue, t->waitq} ;
 	// their condition checks
-        int (*condchecks[2])() = { check_count, check_timer };
+        int (*condchecks[2])(void*) = { check_count, check_timer };
 	// and state
 	void *states[2] = { &o, &o }; 
 	
