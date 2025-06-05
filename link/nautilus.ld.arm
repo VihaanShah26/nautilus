@@ -13,11 +13,48 @@ ENTRY(reset_handler)
 SECTIONS
 {
     .text : {
+	_textStart = .;
         *(.vectors*)
         *(.text*)
+	_textEnd = .;
     } > FLASH
+    .data :{
+    	_dataStart = .; 
+	*(.sdata .sdata.*) /* do not need to distinguish this from .data */
+    	/* . = ALIGN(16); */
+   	 *(.data .data.*)
+    	*(.gnu.linkonce.d*)
+    	/* . = ALIGN(16); */
+    	*(.tdata .tdata.*)
+	_dataEnd = .; 
+    } > RAM
+ .got ALIGN(0x1000) : {
+      *(.got*)
+      *(.gnu.linkconce.got*)
+  }>RAM
+/* Needs to be RW */
+#include "init_stages.ld.inc"
+
+  _rodataStart = .;
+#include "rodata_common.ld.inc"
+  _rodataEnd = .;
+ _loadEnd = .;
+.bss ALIGN(0x1000) : {
+    . = ALIGN(16);
+    _bssStart = .;
+    *(.sbss .sbss.*) /* do not need to distinguish this from .bss */
+    . = ALIGN(16);
+    *(.bss .bss.*);
+    *(.gnu.linkonce.b*)
+    . = ALIGN(16);
+    *(.tbss .tbss*);
+    _bssEnd = .;
+   }>RAM
+
     .stack :{
 	*(.stack*)
     }>RAM
+
+  PROVIDE(kernel_end = .);
 }
 

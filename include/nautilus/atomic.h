@@ -65,7 +65,7 @@ int arch_atomics_enabled(void);
     		ret; \
   })
 #define atomic_store(var, val) do { \
-		(var) = (val); \ 
+		(var) = (val); \
 		} while(0)
 #define atomic_inc(var)       atomic_add((var), 1) 
 #define atomic_dec(var)       atomic_sub((var), 1)

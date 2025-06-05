@@ -1,0 +1,2090 @@
+	GENCONFIG	include/autoconf.h
+	CPP	/home/vihaan/Desktop/nautilus/link/link.ld
+	CC	init.o
+	CC	fmtout.o
+	CC	printk.o
+	CC	doprnt.o
+	CC	vc.o
+	CC	queue.o
+	CC	irqdev.o
+	CC	gpio.o
+	CC	gpiodev.o
+	CC	interrupt.o
+	CC	naut_string.o
+	CC	crypto.o
+	CC	spinlock.o
+	CC	rwlock.o
+	CC	condvar.o
+	CC	semaphore.o
+	CC	msg_queue.o
+	CC	hashtable.o
+/home/vihaan/Desktop/nautilus/src/nautilus/hashtable.c: In function 'nk_hash_long':
+/home/vihaan/Desktop/nautilus/src/nautilus/hashtable.c:105:7: warning: left shift count >= width of type [-Wshift-count-overflow]
+  105 |     n <<= 33;
+      |       ^~~
+	CC	rbtree.o
+	CC	radix_tree.o
+	CC	random.o
+	CC	smp.o
+	CC	idle.o
+	CC	thread.o
+	CC	task.o
+	CC	future.o
+	CC	waitqueue.o
+	CC	group.o
+	CC	timer.o
+	CC	scheduler.o
+	CC	group_sched.o
+	CC	barrier.o
+	CC	backtrace.o
+	CC	env.o
+	CC	setjmp.o
+	CC	dev.o
+	CC	chardev.o
+	CC	blkdev.o
+	CC	netdev.o
+	CC	gpudev.o
+	CC	fs.o
+	CC	shell.o
+	CC	fprintk.o
+	CC	dtoa.o
+	CC	module.o
+	CC	linker.o
+	CC	getopt.o
+	CC	cmdline.o
+	CC	lru_cache.o
+/home/vihaan/Desktop/nautilus/src/nautilus/lru_cache.c:102:9: warning: 'UINT64_C' redefined
+  102 | #define UINT64_C(c) c ## ULL
+      |         ^~~~~~~~
+In file included from /home/vihaan/opt/cross/lib/gcc/arm-none-eabi/16.0.0/include/stdint.h:14,
+                 from /home/vihaan/Desktop/nautilus/include/nautilus/naut_types.h:26,
+                 from /home/vihaan/Desktop/nautilus/include/nautilus/printk.h:32,
+                 from /home/vihaan/Desktop/nautilus/include/nautilus/percpu.h:33,
+                 from /home/vihaan/Desktop/nautilus/include/nautilus/nautilus.h:29,
+                 from /home/vihaan/Desktop/nautilus/include/nautilus/lru_cache.h:36,
+                 from /home/vihaan/Desktop/nautilus/src/nautilus/lru_cache.c:29:
+/home/vihaan/opt/cross/lib/gcc/arm-none-eabi/16.0.0/include/stdint-gcc.h:254:9: note: this is the location of the previous definition
+  254 | #define UINT64_C(c) __UINT64_C(c)
+      |         ^~~~~~~~
+	CC	ipi.o
+	CC	iomap.o
+In file included from /home/vihaan/Desktop/nautilus/src/nautilus/iomap.c:32:
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h: In function 'readb':
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h:64:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   64 |   return *(volatile uint8_t*)addr;
+      |           ^
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h: In function 'readw':
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h:67:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   67 |   return *(volatile uint16_t*)addr;
+      |           ^
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h: In function 'readl':
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h:70:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   70 |   return *(volatile uint32_t*)addr;
+      |           ^
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h: In function 'readq':
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h:73:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   73 |   return *(volatile uint64_t*)addr;
+      |           ^
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h: In function 'writeb':
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h:77:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   77 |   *(volatile uint8_t*)addr = val;
+      |    ^
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h: In function 'writew':
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h:80:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   80 |   *(volatile uint16_t*)addr = val;
+      |    ^
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h: In function 'writel':
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h:83:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   83 |   *(volatile uint32_t*)addr = val;
+      |    ^
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h: In function 'writeq':
+/home/vihaan/Desktop/nautilus/include/nautilus/iomap.h:86:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   86 |   *(volatile uint64_t*)addr = val;
+      |    ^
+	CC	topo.o
+	CC	argp.o
+	CC	xcall.o
+	CC	boot_mm.o
+	CC	buddy.o
+In file included from /home/vihaan/Desktop/nautilus/include/nautilus/nautilus.h:164,
+                 from /home/vihaan/Desktop/nautilus/src/nautilus/mm/buddy.c:25:
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/buddy.c: In function 'buddy_free':
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/buddy.c:638:17: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  638 |            || !((uint64_t)addr % (1ULL<<order)));
+      |                 ^
+/home/vihaan/Desktop/nautilus/include/nautilus/naut_assert.h:38:11: note: in definition of macro 'ASSERT'
+   38 |     if (!(cond)) {                  \
+      |           ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/buddy.c:648:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  648 |     ASSERT((uint64_t)addr>=(uint64_t)(mp->base_addr) &&
+      |            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/naut_assert.h:38:11: note: in definition of macro 'ASSERT'
+   38 |     if (!(cond)) {                  \
+      |           ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/buddy.c:649:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  649 |            (uint64_t)addr<(uint64_t)(mp->base_addr+(1ULL<<mp->pool_order)));
+      |            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/naut_assert.h:38:11: note: in definition of macro 'ASSERT'
+   38 |     if (!(cond)) {                  \
+      |           ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/buddy.c: In function '_buddy_sanity_check':
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/buddy.c:736:23: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  736 |     stats->end_addr = (void*)(mp->base_addr + (1ULL<<mp->pool_order));
+      |                       ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/buddy.c:753:17: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  753 |             if ((uint64_t)block<(uint64_t)mp->base_addr ||
+      |                 ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/buddy.c:754:17: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  754 |                 (uint64_t)block>=(uint64_t)(mp->base_addr+(1ULL<<mp->pool_order))) {
+      |                 ^
+	CC	kmem.o
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'block_hash_hash':
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:185:17: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  185 |   uint64_t n = ((uint64_t) ptr)>>MIN_ORDER;
+      |                 ^
+In file included from /home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:27:
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'create_zone':
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:316:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  316 |             (void*)region->base_addr,
+      |             ^
+/home/vihaan/Desktop/nautilus/include/nautilus/nautilus.h:152:90: note: in definition of macro 'panic'
+  152 | #define panic(fmt, args...)         panic("PANIC at %s(%d): " fmt, __FILE__, __LINE__, ##args)
+      |                                                                                          ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:317:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  317 |             (void*)(region->base_addr + region->len),
+      |             ^
+/home/vihaan/Desktop/nautilus/include/nautilus/nautilus.h:152:90: note: in definition of macro 'panic'
+  152 | #define panic(fmt, args...)         panic("PANIC at %s(%d): " fmt, __FILE__, __LINE__, ##args)
+      |                                                                                          ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'kmem_sys_malloc':
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:646:39: warning: conversion from 'long long unsigned int' to 'addr_t' {aka 'long unsigned int'} changes value from '18446744073709551615' to '4294967295' [-Woverflow]
+  646 |   return _kmem_sys_malloc(size,-1,0,0,-1ULL);
+      |                                       ^~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'kmem_sys_mallocz':
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:651:39: warning: conversion from 'long long unsigned int' to 'addr_t' {aka 'long unsigned int'} changes value from '18446744073709551615' to '4294967295' [-Woverflow]
+  651 |   return _kmem_sys_malloc(size,-1,1,0,-1ULL);
+      |                                       ^~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'kmem_sys_malloc_specific':
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:656:43: warning: conversion from 'long long unsigned int' to 'addr_t' {aka 'long unsigned int'} changes value from '18446744073709551615' to '4294967295' [-Woverflow]
+  656 |   return _kmem_sys_malloc(size,cpu,zero,0,-1ULL);
+      |                                           ^~~~~
+In file included from /home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:55:
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'kmem_sys_realloc_in_place':
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:54:9: note: in expansion of macro 'IS_VALID'
+   54 |     if (IS_VALID(_cur) && limit==0) {                   \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:54:9: note: in expansion of macro 'IS_VALID'
+   54 |     if (IS_VALID(_cur) && limit==0) {                   \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:57:9: note: in expansion of macro 'IS_VALID'
+   57 |     if (IS_VALID(_cur) && limit>0) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:57:9: note: in expansion of macro 'IS_VALID'
+   57 |     if (IS_VALID(_cur) && limit>0) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:61:9: note: in expansion of macro 'IS_VALID'
+   61 |     if (IS_VALID(_cur) && limit>1) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:61:9: note: in expansion of macro 'IS_VALID'
+   61 |     if (IS_VALID(_cur) && limit>1) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:65:9: note: in expansion of macro 'IS_VALID'
+   65 |     if (IS_VALID(_cur) && limit>2) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:65:9: note: in expansion of macro 'IS_VALID'
+   65 |     if (IS_VALID(_cur) && limit>2) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:69:9: note: in expansion of macro 'IS_VALID'
+   69 |     if (IS_VALID(_cur) && limit>3) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:69:9: note: in expansion of macro 'IS_VALID'
+   69 |     if (IS_VALID(_cur) && limit>3) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:73:9: note: in expansion of macro 'IS_VALID'
+   73 |     if (IS_VALID(_cur) && limit>4) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:73:9: note: in expansion of macro 'IS_VALID'
+   73 |     if (IS_VALID(_cur) && limit>4) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:77:9: note: in expansion of macro 'IS_VALID'
+   77 |     if (IS_VALID(_cur) && limit>5) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:77:9: note: in expansion of macro 'IS_VALID'
+   77 |     if (IS_VALID(_cur) && limit>5) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:81:9: note: in expansion of macro 'IS_VALID'
+   81 |     if (IS_VALID(_cur) && limit>6) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:81:9: note: in expansion of macro 'IS_VALID'
+   81 |     if (IS_VALID(_cur) && limit>6) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:85:9: note: in expansion of macro 'IS_VALID'
+   85 |     if (IS_VALID(_cur) && limit>7) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:85:9: note: in expansion of macro 'IS_VALID'
+   85 |     if (IS_VALID(_cur) && limit>7) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:89:9: note: in expansion of macro 'IS_VALID'
+   89 |     if (IS_VALID(_cur) && limit>8) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:89:9: note: in expansion of macro 'IS_VALID'
+   89 |     if (IS_VALID(_cur) && limit>8) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:54:9: note: in expansion of macro 'IS_VALID'
+   54 |     if (IS_VALID(_cur) && limit==0) {                   \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:54:9: note: in expansion of macro 'IS_VALID'
+   54 |     if (IS_VALID(_cur) && limit==0) {                   \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:57:9: note: in expansion of macro 'IS_VALID'
+   57 |     if (IS_VALID(_cur) && limit>0) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:57:9: note: in expansion of macro 'IS_VALID'
+   57 |     if (IS_VALID(_cur) && limit>0) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:61:9: note: in expansion of macro 'IS_VALID'
+   61 |     if (IS_VALID(_cur) && limit>1) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:61:9: note: in expansion of macro 'IS_VALID'
+   61 |     if (IS_VALID(_cur) && limit>1) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:65:9: note: in expansion of macro 'IS_VALID'
+   65 |     if (IS_VALID(_cur) && limit>2) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:65:9: note: in expansion of macro 'IS_VALID'
+   65 |     if (IS_VALID(_cur) && limit>2) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:69:9: note: in expansion of macro 'IS_VALID'
+   69 |     if (IS_VALID(_cur) && limit>3) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:69:9: note: in expansion of macro 'IS_VALID'
+   69 |     if (IS_VALID(_cur) && limit>3) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:73:9: note: in expansion of macro 'IS_VALID'
+   73 |     if (IS_VALID(_cur) && limit>4) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:73:9: note: in expansion of macro 'IS_VALID'
+   73 |     if (IS_VALID(_cur) && limit>4) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:77:9: note: in expansion of macro 'IS_VALID'
+   77 |     if (IS_VALID(_cur) && limit>5) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:77:9: note: in expansion of macro 'IS_VALID'
+   77 |     if (IS_VALID(_cur) && limit>5) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:81:9: note: in expansion of macro 'IS_VALID'
+   81 |     if (IS_VALID(_cur) && limit>6) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:81:9: note: in expansion of macro 'IS_VALID'
+   81 |     if (IS_VALID(_cur) && limit>6) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:85:9: note: in expansion of macro 'IS_VALID'
+   85 |     if (IS_VALID(_cur) && limit>7) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:85:9: note: in expansion of macro 'IS_VALID'
+   85 |     if (IS_VALID(_cur) && limit>7) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:89:9: note: in expansion of macro 'IS_VALID'
+   89 |     if (IS_VALID(_cur) && limit>8) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:89:9: note: in expansion of macro 'IS_VALID'
+   89 |     if (IS_VALID(_cur) && limit>8) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:54:9: note: in expansion of macro 'IS_VALID'
+   54 |     if (IS_VALID(_cur) && limit==0) {                   \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:54:9: note: in expansion of macro 'IS_VALID'
+   54 |     if (IS_VALID(_cur) && limit==0) {                   \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:57:9: note: in expansion of macro 'IS_VALID'
+   57 |     if (IS_VALID(_cur) && limit>0) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:57:9: note: in expansion of macro 'IS_VALID'
+   57 |     if (IS_VALID(_cur) && limit>0) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:61:9: note: in expansion of macro 'IS_VALID'
+   61 |     if (IS_VALID(_cur) && limit>1) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:61:9: note: in expansion of macro 'IS_VALID'
+   61 |     if (IS_VALID(_cur) && limit>1) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:65:9: note: in expansion of macro 'IS_VALID'
+   65 |     if (IS_VALID(_cur) && limit>2) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:65:9: note: in expansion of macro 'IS_VALID'
+   65 |     if (IS_VALID(_cur) && limit>2) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:69:9: note: in expansion of macro 'IS_VALID'
+   69 |     if (IS_VALID(_cur) && limit>3) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:69:9: note: in expansion of macro 'IS_VALID'
+   69 |     if (IS_VALID(_cur) && limit>3) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:73:9: note: in expansion of macro 'IS_VALID'
+   73 |     if (IS_VALID(_cur) && limit>4) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:73:9: note: in expansion of macro 'IS_VALID'
+   73 |     if (IS_VALID(_cur) && limit>4) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:77:9: note: in expansion of macro 'IS_VALID'
+   77 |     if (IS_VALID(_cur) && limit>5) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:77:9: note: in expansion of macro 'IS_VALID'
+   77 |     if (IS_VALID(_cur) && limit>5) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:81:9: note: in expansion of macro 'IS_VALID'
+   81 |     if (IS_VALID(_cur) && limit>6) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:81:9: note: in expansion of macro 'IS_VALID'
+   81 |     if (IS_VALID(_cur) && limit>6) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:85:9: note: in expansion of macro 'IS_VALID'
+   85 |     if (IS_VALID(_cur) && limit>7) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:85:9: note: in expansion of macro 'IS_VALID'
+   85 |     if (IS_VALID(_cur) && limit>7) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:89:9: note: in expansion of macro 'IS_VALID'
+   89 |     if (IS_VALID(_cur) && limit>8) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:89:9: note: in expansion of macro 'IS_VALID'
+   89 |     if (IS_VALID(_cur) && limit>8) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'kmem_sys_free':
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:54:9: note: in expansion of macro 'IS_VALID'
+   54 |     if (IS_VALID(_cur) && limit==0) {                   \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:54:9: note: in expansion of macro 'IS_VALID'
+   54 |     if (IS_VALID(_cur) && limit==0) {                   \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:57:9: note: in expansion of macro 'IS_VALID'
+   57 |     if (IS_VALID(_cur) && limit>0) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:57:9: note: in expansion of macro 'IS_VALID'
+   57 |     if (IS_VALID(_cur) && limit>0) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:61:9: note: in expansion of macro 'IS_VALID'
+   61 |     if (IS_VALID(_cur) && limit>1) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:61:9: note: in expansion of macro 'IS_VALID'
+   61 |     if (IS_VALID(_cur) && limit>1) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:65:9: note: in expansion of macro 'IS_VALID'
+   65 |     if (IS_VALID(_cur) && limit>2) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:65:9: note: in expansion of macro 'IS_VALID'
+   65 |     if (IS_VALID(_cur) && limit>2) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:69:9: note: in expansion of macro 'IS_VALID'
+   69 |     if (IS_VALID(_cur) && limit>3) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:69:9: note: in expansion of macro 'IS_VALID'
+   69 |     if (IS_VALID(_cur) && limit>3) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:73:9: note: in expansion of macro 'IS_VALID'
+   73 |     if (IS_VALID(_cur) && limit>4) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:73:9: note: in expansion of macro 'IS_VALID'
+   73 |     if (IS_VALID(_cur) && limit>4) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:77:9: note: in expansion of macro 'IS_VALID'
+   77 |     if (IS_VALID(_cur) && limit>5) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:77:9: note: in expansion of macro 'IS_VALID'
+   77 |     if (IS_VALID(_cur) && limit>5) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:81:9: note: in expansion of macro 'IS_VALID'
+   81 |     if (IS_VALID(_cur) && limit>6) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:81:9: note: in expansion of macro 'IS_VALID'
+   81 |     if (IS_VALID(_cur) && limit>6) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:85:9: note: in expansion of macro 'IS_VALID'
+   85 |     if (IS_VALID(_cur) && limit>7) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:85:9: note: in expansion of macro 'IS_VALID'
+   85 |     if (IS_VALID(_cur) && limit>7) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:89:9: note: in expansion of macro 'IS_VALID'
+   89 |     if (IS_VALID(_cur) && limit>8) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:89:9: note: in expansion of macro 'IS_VALID'
+   89 |     if (IS_VALID(_cur) && limit>8) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:54:9: note: in expansion of macro 'IS_VALID'
+   54 |     if (IS_VALID(_cur) && limit==0) {                   \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:54:9: note: in expansion of macro 'IS_VALID'
+   54 |     if (IS_VALID(_cur) && limit==0) {                   \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:57:9: note: in expansion of macro 'IS_VALID'
+   57 |     if (IS_VALID(_cur) && limit>0) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:57:9: note: in expansion of macro 'IS_VALID'
+   57 |     if (IS_VALID(_cur) && limit>0) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:61:9: note: in expansion of macro 'IS_VALID'
+   61 |     if (IS_VALID(_cur) && limit>1) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:61:9: note: in expansion of macro 'IS_VALID'
+   61 |     if (IS_VALID(_cur) && limit>1) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:65:9: note: in expansion of macro 'IS_VALID'
+   65 |     if (IS_VALID(_cur) && limit>2) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:65:9: note: in expansion of macro 'IS_VALID'
+   65 |     if (IS_VALID(_cur) && limit>2) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:69:9: note: in expansion of macro 'IS_VALID'
+   69 |     if (IS_VALID(_cur) && limit>3) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:69:9: note: in expansion of macro 'IS_VALID'
+   69 |     if (IS_VALID(_cur) && limit>3) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:73:9: note: in expansion of macro 'IS_VALID'
+   73 |     if (IS_VALID(_cur) && limit>4) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:73:9: note: in expansion of macro 'IS_VALID'
+   73 |     if (IS_VALID(_cur) && limit>4) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:77:9: note: in expansion of macro 'IS_VALID'
+   77 |     if (IS_VALID(_cur) && limit>5) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:77:9: note: in expansion of macro 'IS_VALID'
+   77 |     if (IS_VALID(_cur) && limit>5) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:81:9: note: in expansion of macro 'IS_VALID'
+   81 |     if (IS_VALID(_cur) && limit>6) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:81:9: note: in expansion of macro 'IS_VALID'
+   81 |     if (IS_VALID(_cur) && limit>6) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:85:9: note: in expansion of macro 'IS_VALID'
+   85 |     if (IS_VALID(_cur) && limit>7) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:85:9: note: in expansion of macro 'IS_VALID'
+   85 |     if (IS_VALID(_cur) && limit>7) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                            ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:89:9: note: in expansion of macro 'IS_VALID'
+   89 |     if (IS_VALID(_cur) && limit>8) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:48:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   48 | #define IS_CANONICAL(x) ((((uint64_t)(x))<0x0000800000000000ULL) || (((uint64_t)(x))>=0xffff800000000000ULL))
+      |                                                                       ^
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:50:31: note: in expansion of macro 'IS_CANONICAL'
+   50 | #define IS_VALID(x)   ((x) && IS_CANONICAL(x))
+      |                               ^~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:89:9: note: in expansion of macro 'IS_VALID'
+   89 |     if (IS_VALID(_cur) && limit>8) {                    \
+      |         ^~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'handle_mem':
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1227:43: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1227 |                     nk_vc_printf("%02x", *(uint8_t*)(addr+i+j+k));
+      |                                           ^
+In file included from /home/vihaan/Desktop/nautilus/include/nautilus/list.h:30,
+                 from /home/vihaan/Desktop/nautilus/include/nautilus/mm.h:33,
+                 from /home/vihaan/Desktop/nautilus/include/nautilus/smp.h:41,
+                 from /home/vihaan/Desktop/nautilus/include/nautilus/thread.h:36,
+                 from /home/vihaan/Desktop/nautilus/include/nautilus/nautilus.h:34:
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1233:49: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1233 |                     nk_vc_printf("%c", isalnum(*(uint8_t*)(addr+i+j+k)) ?
+      |                                                 ^
+/home/vihaan/Desktop/nautilus/include/nautilus/naut_string.h:45:50: note: in definition of macro '__ismask'
+   45 | #define __ismask(x) (_ctype[(int)(unsigned char)(x)])
+      |                                                  ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1233:40: note: in expansion of macro 'isalnum'
+ 1233 |                     nk_vc_printf("%c", isalnum(*(uint8_t*)(addr+i+j+k)) ?
+      |                                        ^~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1234:30: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1234 |                             *(uint8_t*)(addr+i+j+k) : '.');
+      |                              ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'handle_peek':
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1266:25: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1266 |                 data = *(uint8_t*)addr;
+      |                         ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1270:25: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1270 |                 data = *(uint16_t*)addr;
+      |                         ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1274:25: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1274 |                 data = *(uint32_t*)addr;
+      |                         ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1278:25: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1278 |                 data = *(uint64_t*)addr;
+      |                         ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'handle_poke':
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1313:18: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1313 |                 *(uint8_t*)addr = data; clflush_unaligned((void*)addr,1);
+      |                  ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1313:59: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1313 |                 *(uint8_t*)addr = data; clflush_unaligned((void*)addr,1);
+      |                                                           ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1317:18: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1317 |                 *(uint16_t*)addr = data; clflush_unaligned((void*)addr,2);
+      |                  ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1317:60: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1317 |                 *(uint16_t*)addr = data; clflush_unaligned((void*)addr,2);
+      |                                                            ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1321:18: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1321 |                 *(uint32_t*)addr = data; clflush_unaligned((void*)addr,4);
+      |                  ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1321:60: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1321 |                 *(uint32_t*)addr = data; clflush_unaligned((void*)addr,4);
+      |                                                            ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1325:18: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1325 |                 *(uint64_t*)addr = data; clflush_unaligned((void*)addr,8);
+      |                  ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:1325:60: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1325 |                 *(uint64_t*)addr = data; clflush_unaligned((void*)addr,8);
+      |                                                            ^
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'kmem_sys_realloc_in_place':
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:59:16: warning: unsupported argument to '__builtin_return_address'
+   59 |         _cur = __builtin_return_address(1);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:63:16: warning: unsupported argument to '__builtin_return_address'
+   63 |         _cur = __builtin_return_address(2);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:67:16: warning: unsupported argument to '__builtin_return_address'
+   67 |         _cur = __builtin_return_address(3);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:725:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  725 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:59:16: warning: unsupported argument to '__builtin_return_address'
+   59 |         _cur = __builtin_return_address(1);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:63:16: warning: unsupported argument to '__builtin_return_address'
+   63 |         _cur = __builtin_return_address(2);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:67:16: warning: unsupported argument to '__builtin_return_address'
+   67 |         _cur = __builtin_return_address(3);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:734:7: note: in expansion of macro 'BACKTRACE'
+  734 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:59:16: warning: unsupported argument to '__builtin_return_address'
+   59 |         _cur = __builtin_return_address(1);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:63:16: warning: unsupported argument to '__builtin_return_address'
+   63 |         _cur = __builtin_return_address(2);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:67:16: warning: unsupported argument to '__builtin_return_address'
+   67 |         _cur = __builtin_return_address(3);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:742:7: note: in expansion of macro 'BACKTRACE'
+  742 |       BACKTRACE(KMEM_ERROR,3);
+      |       ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c: In function 'kmem_sys_free':
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:59:16: warning: unsupported argument to '__builtin_return_address'
+   59 |         _cur = __builtin_return_address(1);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:63:16: warning: unsupported argument to '__builtin_return_address'
+   63 |         _cur = __builtin_return_address(2);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:67:16: warning: unsupported argument to '__builtin_return_address'
+   67 |         _cur = __builtin_return_address(3);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:80:32: note: in expansion of macro 'BACKTRACE'
+   80 | #define KMEM_ERROR_BACKTRACE() BACKTRACE(KMEM_ERROR,3)
+      |                                ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:815:7: note: in expansion of macro 'KMEM_ERROR_BACKTRACE'
+  815 |       KMEM_ERROR_BACKTRACE();
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:59:16: warning: unsupported argument to '__builtin_return_address'
+   59 |         _cur = __builtin_return_address(1);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:63:16: warning: unsupported argument to '__builtin_return_address'
+   63 |         _cur = __builtin_return_address(2);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/include/nautilus/backtrace.h:67:16: warning: unsupported argument to '__builtin_return_address'
+   67 |         _cur = __builtin_return_address(3);             \
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/mm/kmem.c:827:9: note: in expansion of macro 'BACKTRACE'
+  827 |         BACKTRACE(KMEM_ERROR,3);
+      |         ^~~~~~~~~
+	CC	/home/vihaan/Desktop/nautilus/src/.null.o
+	LD	src/nautilus/mm/builtin.o
+	CC	dt.o
+/home/vihaan/Desktop/nautilus/src/nautilus/of/dt.c: In function 'dt_node_cache_irq_ext_data':
+/home/vihaan/Desktop/nautilus/src/nautilus/of/dt.c:352:31: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  352 |     offsets[num_irqs] = (int)((uint64_t)raw - (uint64_t)original_raw);
+      |                               ^
+/home/vihaan/Desktop/nautilus/src/nautilus/of/dt.c:352:47: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  352 |     offsets[num_irqs] = (int)((uint64_t)raw - (uint64_t)original_raw);
+      |                                               ^
+	CC	fdt.o
+	CC	numa.o
+	CC	mem.o
+In file included from /home/vihaan/Desktop/nautilus/include/nautilus/nautilus.h:35,
+                 from /home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:25:
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c: In function 'fdt_reserve_boot_regions':
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:57: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                         ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:141:21: note: in definition of macro 'nk_vc_log_wrap'
+  141 |    nk_vc_log(fmt, ##args);                      \
+      |                     ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:82: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                                                  ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:141:21: note: in definition of macro 'nk_vc_log_wrap'
+  141 |    nk_vc_log(fmt, ##args);                      \
+      |                     ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:105: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                                                                         ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:141:21: note: in definition of macro 'nk_vc_log_wrap'
+  141 |    nk_vc_log(fmt, ##args);                      \
+      |                     ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:57: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                         ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:143:18: note: in definition of macro 'nk_vc_log_wrap'
+  143 |    printk(fmt, ##args);                         \
+      |                  ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:82: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                                                  ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:143:18: note: in definition of macro 'nk_vc_log_wrap'
+  143 |    printk(fmt, ##args);                         \
+      |                  ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:105: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                                                                         ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:143:18: note: in definition of macro 'nk_vc_log_wrap'
+  143 |    printk(fmt, ##args);                         \
+      |                  ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:57: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                         ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:141:21: note: in definition of macro 'nk_vc_log_wrap'
+  141 |    nk_vc_log(fmt, ##args);                      \
+      |                     ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:82: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                                                  ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:141:21: note: in definition of macro 'nk_vc_log_wrap'
+  141 |    nk_vc_log(fmt, ##args);                      \
+      |                     ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:105: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                                                                         ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:141:21: note: in definition of macro 'nk_vc_log_wrap'
+  141 |    nk_vc_log(fmt, ##args);                      \
+      |                     ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:57: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                         ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:143:18: note: in definition of macro 'nk_vc_log_wrap'
+  143 |    printk(fmt, ##args);                         \
+      |                  ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:82: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                                                  ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:143:18: note: in definition of macro 'nk_vc_log_wrap'
+  143 |    printk(fmt, ##args);                         \
+      |                  ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:105: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                                                                         ^
+/home/vihaan/Desktop/nautilus/include/nautilus/vc.h:143:18: note: in definition of macro 'nk_vc_log_wrap'
+  143 |    printk(fmt, ##args);                         \
+      |                  ^~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:40:33: note: in expansion of macro 'INFO_PRINT'
+   40 | #define BMM_PRINT(fmt, args...) INFO_PRINT("BOOTMEM: " fmt, ##args)
+      |                                 ^~~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:53:3: note: in expansion of macro 'BMM_PRINT'
+   53 |   BMM_PRINT("Reserving kernel region (%p, size %lu)\n", (uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |   ^~~~~~~~~
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:54:23: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   54 |   mm_boot_reserve_mem((uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                       ^
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:54:48: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   54 |   mm_boot_reserve_mem((uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                ^
+/home/vihaan/Desktop/nautilus/src/nautilus/of/mem.c:54:71: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   54 |   mm_boot_reserve_mem((uint64_t)kernel_start, ((uint64_t)kernel_end - (uint64_t)kernel_start));
+      |                                                                       ^
+	LD	src/nautilus/of/builtin.o
+	LD	src/nautilus/builtin.o
+	CC	arch.o
+	CC	start.o
+	LD	src/arch/arm/asm/builtin.o
+	LD	src/arch/arm/builtin.o
+	LD	src/arch/builtin.o
+	CC	pci.o
+/home/vihaan/Desktop/nautilus/src/dev/pci.c: In function 'pci_msi_x_get_bar_start':
+/home/vihaan/Desktop/nautilus/src/dev/pci.c:206:10: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  206 |   return (void*) (uint64_t) (bar & 0xfffffff0);
+      |          ^
+/home/vihaan/Desktop/nautilus/src/dev/pci.c: In function 'pci_dev_enable_msi':
+/home/vihaan/Desktop/nautilus/src/dev/pci.c:1352:23: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ 1352 |   uint32_t mar_low = ((uint64_t)mar_addr) & 0xFFFFFFFF;
+      |                       ^
+/home/vihaan/Desktop/nautilus/src/dev/pci.c:1353:25: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ 1353 |   uint32_t mar_high = (((uint64_t)mar_addr) >> 32) & 0xFFFFFFFF;
+      |                         ^
+/home/vihaan/Desktop/nautilus/src/dev/pci.c: In function 'pci_dev_set_msi_x_entry':
+/home/vihaan/Desktop/nautilus/src/dev/pci.c:1636:34: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ 1636 |   uint32_t mar_low = (uint32_t)(((uint64_t)addr) & 0xFFFFFFFF);
+      |                                  ^
+/home/vihaan/Desktop/nautilus/src/dev/pci.c:1637:36: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ 1637 |   uint32_t mar_high = (uint32_t)((((uint64_t)addr)>>32) & 0xFFFFFFFF);
+      |                                    ^
+	LD	src/dev/pci/builtin.o
+	LD	src/dev/builtin.o
+	LD	src/test/builtin.o
+	LD	src/compat/builtin.o
+	LD	src/fs/builtin.o
+	LD	src/builtin.o
+	CC	bitmap.o
+	CC	libfdt.o
+	CC	libfdt_ro.o
+	LD	lib/builtin.o
+	LD	./builtin.o
+	LD	nautilus.bin
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_get_nautilus_info':
+pci.c:(.text+0x22ec): undefined reference to `nautilus_info'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `pci_dev_enable_msi':
+(.text+0x59ca): undefined reference to `__popcountsi2'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `__do_backtrace':
+(.text+0x8558): undefined reference to `kernel_start'
+arm-none-eabi-ld: (.text+0x855c): undefined reference to `kernel_end'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_stack_dump':
+(.text+0x8624): undefined reference to `arch_read_sp'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_print_regs':
+(.text+0x86ba): undefined reference to `arch_print_regs'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `handle_blktest':
+blkdev.c:(.text+0xa6aa): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `handle_chartest':
+chardev.c:(.text+0xb364): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_cmdline_init':
+(.text+0xcecc): undefined reference to `__start_flags'
+arm-none-eabi-ld: (.text+0xd1ec): undefined reference to `__start_flags'
+arm-none-eabi-ld: (.text+0xd1f0): undefined reference to `__stop_flags'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `_doprnt':
+(.text+0x1066a): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: (.text+0x10694): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `isnan':
+dtoa.c:(.text+0x10916): undefined reference to `__aeabi_f2iz'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `ratio':
+dtoa.c:(.text+0x1187a): undefined reference to `__aeabi_ddiv'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `sulp':
+dtoa.c:(.text+0x1264c): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `bigcomp':
+dtoa.c:(.text+0x1269c): undefined reference to `__aeabi_dcmpeq'
+arm-none-eabi-ld: dtoa.c:(.text+0x1293a): undefined reference to `__aeabi_dsub'
+arm-none-eabi-ld: dtoa.c:(.text+0x12966): undefined reference to `__aeabi_dadd'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `strtod':
+(.text+0x132e8): undefined reference to `__aeabi_ul2d'
+arm-none-eabi-ld: (.text+0x13320): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x1336c): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x1338a): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x133b8): undefined reference to `__aeabi_ddiv'
+arm-none-eabi-ld: (.text+0x144b2): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: (.text+0x144de): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: (.text+0x14506): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: (.text+0x1457a): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: (.text+0x1459a): undefined reference to `__aeabi_ul2d'
+arm-none-eabi-ld: (.text+0x145e2): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x146ce): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x14720): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x147c4): undefined reference to `__aeabi_ddiv'
+arm-none-eabi-ld: (.text+0x14852): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x14930): undefined reference to `__aeabi_dcmpeq'
+arm-none-eabi-ld: (.text+0x1511e): undefined reference to `__aeabi_dadd'
+arm-none-eabi-ld: (.text+0x15144): undefined reference to `__aeabi_dsub'
+arm-none-eabi-ld: (.text+0x1515c): undefined reference to `__aeabi_dcmpeq'
+arm-none-eabi-ld: (.text+0x151c6): undefined reference to `__aeabi_dcmple'
+arm-none-eabi-ld: (.text+0x1528a): undefined reference to `__aeabi_dcmplt'
+arm-none-eabi-ld: (.text+0x152c6): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x15302): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x1539c): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x153b0): undefined reference to `__aeabi_dadd'
+arm-none-eabi-ld: (.text+0x15452): undefined reference to `__aeabi_dcmple'
+arm-none-eabi-ld: (.text+0x15464): undefined reference to `__aeabi_d2uiz'
+arm-none-eabi-ld: (.text+0x15480): undefined reference to `__aeabi_ui2d'
+arm-none-eabi-ld: (.text+0x15514): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x15528): undefined reference to `__aeabi_dadd'
+arm-none-eabi-ld: (.text+0x15540): undefined reference to `__aeabi_dcmpeq'
+arm-none-eabi-ld: (.text+0x15586): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: (.text+0x1559a): undefined reference to `__aeabi_dadd'
+arm-none-eabi-ld: (.text+0x155ec): undefined reference to `__aeabi_d2iz'
+arm-none-eabi-ld: (.text+0x155fa): undefined reference to `__aeabi_i2d'
+arm-none-eabi-ld: (.text+0x1560a): undefined reference to `__aeabi_dsub'
+arm-none-eabi-ld: (.text+0x15656): undefined reference to `__aeabi_dcmplt'
+arm-none-eabi-ld: (.text+0x1566e): undefined reference to `__aeabi_dcmpgt'
+arm-none-eabi-ld: (.text+0x15688): undefined reference to `__aeabi_dcmplt'
+arm-none-eabi-ld: (.text+0x1579c): undefined reference to `__aeabi_dcmpeq'
+arm-none-eabi-ld: (.text+0x157d6): undefined reference to `__aeabi_dmul'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `dtoa_r':
+(.text+0x15a88): undefined reference to `__aeabi_dcmpeq'
+arm-none-eabi-ld: (.text+0x164f4): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `format_int':
+fmtout.c:(.text+0x1ae34): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: fmtout.c:(.text+0x1b058): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: fmtout.c:(.text+0x1b078): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `handle_gputest':
+(.text+0x23886): undefined reference to `rand'
+arm-none-eabi-ld: (.text+0x238a8): undefined reference to `rand'
+arm-none-eabi-ld: (.text+0x238ca): undefined reference to `rand'
+arm-none-eabi-ld: (.text+0x238f8): undefined reference to `rand'
+arm-none-eabi-ld: (.text+0x23926): undefined reference to `rand'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o:(.text+0x23948): more undefined references to `rand' follow
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_handle_init_stage_silent':
+(.text+0x279d8): undefined reference to `__stop_init_stage_silent'
+arm-none-eabi-ld: (.text+0x279dc): undefined reference to `__start_init_stage_silent'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_handle_init_stage_static':
+(.text+0x279f8): undefined reference to `__stop_init_stage_static'
+arm-none-eabi-ld: (.text+0x279fc): undefined reference to `__start_init_stage_static'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_handle_init_stage_boot':
+(.text+0x27a18): undefined reference to `__stop_init_stage_boot'
+arm-none-eabi-ld: (.text+0x27a1c): undefined reference to `__start_init_stage_boot'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_handle_init_stage_kmem':
+(.text+0x27a38): undefined reference to `__stop_init_stage_kmem'
+arm-none-eabi-ld: (.text+0x27a3c): undefined reference to `__start_init_stage_kmem'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_handle_init_stage_subsys':
+(.text+0x27a58): undefined reference to `__stop_init_stage_subsys'
+arm-none-eabi-ld: (.text+0x27a5c): undefined reference to `__start_init_stage_subsys'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_handle_init_stage_sched':
+(.text+0x27a78): undefined reference to `__stop_init_stage_sched'
+arm-none-eabi-ld: (.text+0x27a7c): undefined reference to `__start_init_stage_sched'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_handle_init_stage_driver':
+(.text+0x27a98): undefined reference to `__stop_init_stage_driver'
+arm-none-eabi-ld: (.text+0x27a9c): undefined reference to `__start_init_stage_driver'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_handle_init_stage_fs':
+(.text+0x27ab8): undefined reference to `__stop_init_stage_fs'
+arm-none-eabi-ld: (.text+0x27abc): undefined reference to `__start_init_stage_fs'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_handle_init_stage_launch':
+(.text+0x27ad8): undefined reference to `__stop_init_stage_launch'
+arm-none-eabi-ld: (.text+0x27adc): undefined reference to `__start_init_stage_launch'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_io_map':
+(.text+0x2be9e): undefined reference to `arch_handle_io_map'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_io_unmap':
+(.text+0x2c2c6): undefined reference to `arch_handle_io_unmap'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_link_prog':
+(.text+0x2f22e): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: (.text+0x2f282): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: (.text+0x2f2d6): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `_hash_for_lru_cache':
+lru_cache.c:(.text+0x2fbf2): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_get_nautilus_info':
+boot_mm.c:(.text+0x30034): undefined reference to `nautilus_info'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `detect_mem_map':
+boot_mm.c:(.text+0x3010a): undefined reference to `arch_detect_mem_map'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `mm_boot_init':
+(.text+0x30456): undefined reference to `arch_reserve_boot_regions'
+arm-none-eabi-ld: (.text+0x30464): undefined reference to `_loadStart'
+arm-none-eabi-ld: (.text+0x30468): undefined reference to `_loadEnd'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `isnan':
+buddy.c:(.text+0x31666): undefined reference to `__aeabi_f2iz'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_get_nautilus_info':
+kmem.c:(.text+0x35420): undefined reference to `nautilus_info'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `isnan':
+kmem.c:(.text+0x35506): undefined reference to `__aeabi_f2iz'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `block_hash_hash':
+kmem.c:(.text+0x35aa2): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `kmem_add_memory':
+(.text+0x35f2c): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `_nk_msg_queue_try_push':
+msg_queue.c:(.text+0x3bfa6): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `_nk_msg_queue_try_pull':
+msg_queue.c:(.text+0x3c010): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_get_nautilus_info':
+dt.c:(.text+0x3eac8): undefined reference to `nautilus_info'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `be32toh':
+dt.c:(.text+0x3ead4): undefined reference to `arch_little_endian'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `dt_node_read_int_array':
+dt.c:(.text+0x3f57a): undefined reference to `arch_little_endian'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `be32toh':
+fdt.c:(.text+0x43210): undefined reference to `arch_little_endian'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `fdt_reserve_boot_regions':
+(.text+0x43bd8): undefined reference to `kernel_start'
+arm-none-eabi-ld: (.text+0x43bdc): undefined reference to `kernel_end'
+arm-none-eabi-ld: (.text+0x43e88): undefined reference to `kernel_start'
+arm-none-eabi-ld: (.text+0x43e8c): undefined reference to `kernel_end'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `be32toh':
+numa.c:(.text+0x44dc8): undefined reference to `arch_little_endian'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `isnan':
+printk.c:(.text+0x46c02): undefined reference to `__aeabi_f2iz'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `put_dec':
+printk.c:(.text+0x47554): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: printk.c:(.text+0x47566): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_get_nautilus_info':
+scheduler.c:(.text+0x4ba64): undefined reference to `nautilus_info'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `print_thread':
+scheduler.c:(.text+0x4bc78): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: scheduler.c:(.text+0x4bc90): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: scheduler.c:(.text+0x4bca8): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: scheduler.c:(.text+0x4bcc0): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: scheduler.c:(.text+0x4bcd8): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o:scheduler.c:(.text+0x4bd94): more undefined references to `__aeabi_uldivmod' follow
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `set_timer':
+scheduler.c:(.text+0x4f4d4): undefined reference to `arch_realtime_to_ticks'
+arm-none-eabi-ld: scheduler.c:(.text+0x4f6ba): undefined reference to `arch_update_timer'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `_sched_need_resched':
+(.text+0x4f7c4): undefined reference to `arch_realtime_to_ticks'
+arm-none-eabi-ld: (.text+0x4f7ce): undefined reference to `arch_update_timer'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `select_victim':
+scheduler.c:(.text+0x57172): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: scheduler.c:(.text+0x5718c): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `handle_special_switch':
+scheduler.c:(.text+0x57e62): undefined reference to `nk_thread_switch_exit_helper'
+arm-none-eabi-ld: scheduler.c:(.text+0x57ffc): undefined reference to `nk_thread_switch'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `cur_time':
+scheduler.c:(.text+0x581ee): undefined reference to `arch_read_timestamp'
+arm-none-eabi-ld: scheduler.c:(.text+0x581fa): undefined reference to `arch_cycles_to_realtime'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `get_periodic_util':
+scheduler.c:(.text+0x58462): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: scheduler.c:(.text+0x58590): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `get_sporadic_util':
+scheduler.c:(.text+0x58724): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: scheduler.c:(.text+0x58888): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `rt_thread_admit':
+scheduler.c:(.text+0x58bd0): undefined reference to `__aeabi_uldivmod'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o:scheduler.c:(.text+0x58bec): more undefined references to `__aeabi_uldivmod' follow
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_sched_start':
+(.text+0x5b09a): undefined reference to `arch_read_timestamp'
+arm-none-eabi-ld: (.text+0x5b0e4): undefined reference to `arch_read_timestamp'
+arm-none-eabi-ld: (.text+0x5b106): undefined reference to `arch_cycles_to_realtime'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `handle_cores':
+scheduler.c:(.text+0x5b714): undefined reference to `nk_sched_dump_cores'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `handle_time':
+scheduler.c:(.text+0x5bc22): undefined reference to `nk_sched_dump_time'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `testit':
+setjmp.c:(.text+0x5e364): undefined reference to `longjmp'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `test_setlong':
+(.text+0x5e376): undefined reference to `setjmp'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `shell_cmd_init':
+shell.c:(.text+0x5fef4): undefined reference to `__start_shell_cmds'
+arm-none-eabi-ld: shell.c:(.text+0x605cc): undefined reference to `__start_shell_cmds'
+arm-none-eabi-ld: shell.c:(.text+0x605d0): undefined reference to `__stop_shell_cmds'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `nk_get_nautilus_info':
+smp.c:(.text+0x61970): undefined reference to `nautilus_info'
+arm-none-eabi-ld: /home/vihaan/Desktop/nautilus/builtin.o: in function `thread_setup_init_stack':
+(.text+0x62a00): undefined reference to `nk_thread_entry'
+make: *** [Makefile:155: /home/vihaan/Desktop/nautilus/nautilus.bin] Error 1

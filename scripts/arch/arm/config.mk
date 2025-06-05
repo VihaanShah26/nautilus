@@ -1,1 +1,1 @@
-LDFLAGS += -L /home/vihaan/opt/cross/lib/gcc/arm-none-eabi/16.0.0/ -lgcc
+LDFLAGS += -L /home/vihaan/opt/cross/lib/gcc/arm-none-eabi/16.0.0/ 
