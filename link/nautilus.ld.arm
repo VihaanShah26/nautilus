@@ -12,6 +12,7 @@ ENTRY(reset_handler)
 
 SECTIONS
 {
+     PROVIDE(kernel_start = .);
     .text : {
 	_textStart = .;
         *(.vectors*)

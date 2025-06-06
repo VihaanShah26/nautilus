@@ -45,6 +45,40 @@ nk_irq_t arch_xcall_irq(void) {
 	return NK_NULL_IRQ; 
 }
 
+void arm_print_regs_extended(struct nk_regs *r) {
+#define PRINT_REG(REG) printk("\t"#REG" = 0x%x = %u\n", r->REG, r->REG)
+ }
+
+void arch_print_regs(struct nk_regs *r) {
+#define PRINT_REG(REG) printk("\t"#REG" = 0x%x = %u\n", r->REG, r->REG)
+ }
+
+void *arch_read_sp(void) {
+  void *stack_ptr;
+  __asm__ __volatile__ (
+      "mov %0, sp"
+      : "=r" (stack_ptr)
+      :
+      );
+  return stack_ptr;
+}
+
+int arch_little_endian(void) {
+  // Technically only refers to data accesses not instruction but that's good enough
+	printk("TO BE IMPLEMENTED");
+	return 0;
+}
+
+void arch_detect_mem_map(mmap_info_t *mm_info, mem_map_entry_t *memory_map,
+                         unsigned long mbd) {
+  //TODO
+  return;
+}
+void arch_reserve_boot_regions(unsigned long mbd) {
+  // TODO
+  return;
+}
+
 void arch_relax(void) {
   __asm__ __volatile__ ("yield");
 }

@@ -59,17 +59,40 @@ void arch_detect_mem_map(mmap_info_t *mm_info, mem_map_entry_t *memory_map,
                          unsigned long mbd);
 void arch_reserve_boot_regions(unsigned long mbd);
 
+#ifndef NAUT_CONFIG_ARCH_ARM
 uint32_t arch_cycles_to_ticks(uint64_t cycles);
+#else
+uint32_t arch_cycles_to_ticks(uint32_t cycles);
+#endif
+
+#ifndef NAUT_CONFIG_ARCH_ARM
 uint32_t arch_realtime_to_ticks(uint64_t ns);
+#else
+uint32_t arch_realtime_to_ticks(uint32_t ns);
+#endif 
+
+#ifndef NAUT_CONFIG_ARCH_ARM
 uint64_t arch_realtime_to_cycles(uint64_t ns);
+#else
+uint32_t arch_realtime_to_cycles(uint32_t ns);
+#endif
+
+#ifndef NAUT_CONFIG_ARCH_ARM
 uint64_t arch_cycles_to_realtime(uint64_t cycles);
+#else
+uint32_t arch_cycles_to_realtime(uint32_t cycles);
+#endif
 
 void arch_update_timer(uint32_t ticks, nk_timer_condition_t cond);
 void arch_set_timer(uint32_t ticks);
 int arch_read_timer(void);
 int arch_timer_handler(struct nk_irq_action *action, struct nk_regs *regs, void *state);
 
+#ifndef NAUT_CONFIG_ARCH_ARM
 uint64_t arch_read_timestamp(void);
+#else
+uint32_t arch_read_timestamp(void);
+#endif
 
 void *arch_read_sp(void);
 void arch_relax(void);

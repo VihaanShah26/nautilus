@@ -45,7 +45,7 @@ int __ilog2_u64(uint64_t n)
 {
 	return fls64(n) - 1;
 }
-#endif 
+#endif
 
 /*
  * round up to nearest power of two

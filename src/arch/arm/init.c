@@ -62,7 +62,7 @@
 #include<nautilus/vc.h>
 #include<nautilus/fs.h>
 #include<nautilus/shell.h>
-
+#include<nautilus/libccompat.h>
 #include<nautilus/ipi.h>
 
 #include<nautilus/of/dt.h>
@@ -76,6 +76,7 @@
 #include<arch/arm64/fpu.h>
 
 #include<dev/pci.h>
+
 #ifdef NAUT_CONFIG_OF_PCI
 #include<dev/pci/of.h>
 #endif

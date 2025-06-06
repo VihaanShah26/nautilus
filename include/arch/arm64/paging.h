@@ -138,7 +138,8 @@ struct pt_table_desc
     uint_t valid : 1;
     uint_t is_table : 1;
     uint_t sw_use_10 : 10;
-    ulong_t address_data : 36;
+    uint_t address_data : 32;
+    uint_t address_data_2 : 4;
     uint_t __res0 : 3;
     PT_TABLE_ATTR // : 13;
 } __attribute__((packed));
@@ -162,7 +163,8 @@ struct pt_page_desc
     uint_t valid : 1;
     uint_t reserved : 1;
     PT_LOWER_ATTR // : 10;  
-    ulong_t address_data : 36;
+    uint_t address_data : 32;
+    uint_t address_data_2 : 4;
     uint_t __res0 : 2; 
     PT_UPPER_ATTR // : 14;
 } __attribute__((packed));
