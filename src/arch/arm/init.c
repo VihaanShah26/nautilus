@@ -120,36 +120,36 @@ extern int smp_init_tpidr(void);
 
 static inline void per_cpu_sys_ctrl_reg_init(void) {
 
-  sctlr_el1_t sctlr;
-  LOAD_SYS_REG(SCTLR_EL1, sctlr.raw);
+//   sctlr_el1_t sctlr;
+//   LOAD_SYS_REG(SCTLR_EL1, sctlr.raw);
 
-  sctlr.align_check_en = 0;
-  sctlr.unaligned_acc_en = 1;
-  sctlr.write_exec_never = 0;
-  sctlr.instr_cacheability_ctrl = 1;
-  sctlr.data_cacheability_ctrl = 1;
+//   sctlr.align_check_en = 0;
+//   sctlr.unaligned_acc_en = 1;
+//   sctlr.write_exec_never = 0;
+//   sctlr.instr_cacheability_ctrl = 1;
+//   sctlr.data_cacheability_ctrl = 1;
 
-#ifdef NAUT_CONFIG_DEBUG_PRINTS
-  //dump_sctlr_el1(sctlr);
-#endif
+// #ifdef NAUT_CONFIG_DEBUG_PRINTS
+//   //dump_sctlr_el1(sctlr);
+// #endif
 
-  STORE_SYS_REG(SCTLR_EL1, sctlr.raw);
+//   STORE_SYS_REG(SCTLR_EL1, sctlr.raw);
 }
 
 static inline int init_core_barrier(struct sys_info *sys) {
-  sys->core_barrier = (nk_barrier_t *)malloc(sizeof(nk_barrier_t));
-  if (!sys->core_barrier) {
-    ERROR_PRINT("Could not allocate core barrier\n");
-    return -1;
-  }
-  memset(sys->core_barrier, 0, sizeof(nk_barrier_t));
+  // sys->core_barrier = (nk_barrier_t *)malloc(sizeof(nk_barrier_t));
+  // if (!sys->core_barrier) {
+  //   ERROR_PRINT("Could not allocate core barrier\n");
+  //   return -1;
+  // }
+  // memset(sys->core_barrier, 0, sizeof(nk_barrier_t));
 
-  if (nk_barrier_init(sys->core_barrier, sys->num_cpus) != 0) {
-    ERROR_PRINT("Could not create core barrier\n");
-    return -1;
-  }
+  // if (nk_barrier_init(sys->core_barrier, sys->num_cpus) != 0) {
+  //   ERROR_PRINT("Could not create core barrier\n");
+  //   return -1;
+  // }
 
-  INIT_PRINT("Initialized the core barrier\n");
+  // INIT_PRINT("Initialized the core barrier\n");
 
   return 0;
 }
@@ -159,134 +159,134 @@ volatile static uint8_t __secondary_init_second_phase_token = 0;
 
 void * secondary_init_boot_stack(void) {
 
-  fpu_init_percpu(&nautilus_info);
+//   fpu_init_percpu(&nautilus_info);
 
-  if(smp_init_tpidr()) {
-    INIT_ERROR("Could not set TPIDR_EL1 for CPU!\n");
-    panic("Could not set TPIDR_EL1 for CPU! panicking...\n");
-  }
+//   if(smp_init_tpidr()) {
+//     INIT_ERROR("Could not set TPIDR_EL1 for CPU!\n");
+//     panic("Could not set TPIDR_EL1 for CPU! panicking...\n");
+//   }
 
-  INIT_PRINT("Starting CPU %u...\n", my_cpu_id());
+//   INIT_PRINT("Starting CPU %u...\n", my_cpu_id());
 
-  per_cpu_sys_ctrl_reg_init();
+//   per_cpu_sys_ctrl_reg_init();
  
-  INIT_PRINT("per_cpu init paging\n"); 
-  per_cpu_paging_init();
+//   INIT_PRINT("per_cpu init paging\n"); 
+//   per_cpu_paging_init();
 
-  // Signal that we reached the end of the first phase
-  __secondary_init_first_phase_complete = 1;
+//   // Signal that we reached the end of the first phase
+//   __secondary_init_first_phase_complete = 1;
 
-  // Wait for the second_phase_token to allow us to pass
-  while(__secondary_init_second_phase_token < my_cpu_id()) {} 
+//   // Wait for the second_phase_token to allow us to pass
+//   while(__secondary_init_second_phase_token < my_cpu_id()) {} 
 
-  // We should have atomics and kmem now
-  INIT_PRINT("Starting second phase of secondary_init\n");
+//   // We should have atomics and kmem now
+//   INIT_PRINT("Starting second phase of secondary_init\n");
   
 
-#if defined(NAUT_CONFIG_GIC_VERSION_2) || defined(NAUT_CONFIG_GIC_VERSION_2M)
-  if(gicv2_percpu_init()) {
-    panic("Failed to initialize GICv2 on CPU %u!\n", my_cpu_id());  
-  }
-#elif defined(NAUT_CONFIG_GIC_VERSION_3)
-  if(gicv3_percpu_init()) {
-    panic("Failed to initialize GICv3 on CPU %u!\n", my_cpu_id());  
-  }
-#else
-#error "Invalid GIC Version!"
-#endif
+// #if defined(NAUT_CONFIG_GIC_VERSION_2) || defined(NAUT_CONFIG_GIC_VERSION_2M)
+//   if(gicv2_percpu_init()) {
+//     panic("Failed to initialize GICv2 on CPU %u!\n", my_cpu_id());  
+//   }
+// #elif defined(NAUT_CONFIG_GIC_VERSION_3)
+//   if(gicv3_percpu_init()) {
+//     panic("Failed to initialize GICv3 on CPU %u!\n", my_cpu_id());  
+//   }
+// #else
+// #error "Invalid GIC Version!"
+// #endif
 
-  INIT_PRINT("Initialized the IRQ chip!\n", my_cpu_id());
+//   INIT_PRINT("Initialized the IRQ chip!\n", my_cpu_id());
 
-  if(smp_xcall_init_queue(nautilus_info.sys.cpus[my_cpu_id()])) {
-      INIT_WARN("Failed to initialize XCALL queue on cpu %u!\n", my_cpu_id());
-  }
+//   if(smp_xcall_init_queue(nautilus_info.sys.cpus[my_cpu_id()])) {
+//       INIT_WARN("Failed to initialize XCALL queue on cpu %u!\n", my_cpu_id());
+//   }
 
-  nk_rand_init(nautilus_info.sys.cpus[my_cpu_id()]);
+//   nk_rand_init(nautilus_info.sys.cpus[my_cpu_id()]);
 
-  nk_sched_init_ap(&sched_cfg);
+//   nk_sched_init_ap(&sched_cfg);
 
-  // nk_sched_init_ap should have allocated us a stack, so we need to switch to it
-  // (previously we should have been using the shared boot stack)
-  return get_cur_thread()->rsp;
+//   // nk_sched_init_ap should have allocated us a stack, so we need to switch to it
+//   // (previously we should have been using the shared boot stack)
+//   return get_cur_thread()->rsp;
 }
 
 void secondary_init_threaded(void) {
-  nk_thread_name(get_cur_thread(), "secondary_init");
+//   nk_thread_name(get_cur_thread(), "secondary_init");
 
-  INIT_PRINT("ARM64: successfully started CPU %d\n", my_cpu_id()); 
-  if(__secondary_init_second_phase_token+1 < nautilus_info.sys.num_cpus) {
-    INIT_PRINT("Letting CPU %u start it's second phase!\n", __secondary_init_second_phase_token+1);
-  } else {
-    INIT_PRINT("Final AP finished initializing\n");
-  }
-  __secondary_init_second_phase_token += 1;
+//   INIT_PRINT("ARM64: successfully started CPU %d\n", my_cpu_id()); 
+//   if(__secondary_init_second_phase_token+1 < nautilus_info.sys.num_cpus) {
+//     INIT_PRINT("Letting CPU %u start it's second phase!\n", __secondary_init_second_phase_token+1);
+//   } else {
+//     INIT_PRINT("Final AP finished initializing\n");
+//   }
+//   __secondary_init_second_phase_token += 1;
 
-  nk_sched_start();
+//   nk_sched_start();
  
-  // Enable interrupts
-#ifndef NAUT_CONFIG_BEANDIP
-  arch_enable_ints(); 
-#endif
+//   // Enable interrupts
+// #ifndef NAUT_CONFIG_BEANDIP
+//   arch_enable_ints(); 
+// #endif
 
-  INIT_PRINT("Interrupts are now enabled\n");
+//   INIT_PRINT("Interrupts are now enabled\n");
 
-  //enable the timer
-  percpu_timer_init();
+//   //enable the timer
+//   percpu_timer_init();
 
-  INIT_PRINT("Promoting secondary init thread to idle!\n");
-  idle(NULL, NULL);
+//   INIT_PRINT("Promoting secondary init thread to idle!\n");
+//   idle(NULL, NULL);
 }
 
 extern void secondary_start(void);
 
 static int start_secondaries(struct sys_info *sys) {
-  INIT_PRINT("Starting secondary processors\n");
+  // INIT_PRINT("Starting secondary processors\n");
 
-  for(uint64_t i = 1; i < sys->num_cpus; i++) {
-    __secondary_init_first_phase_complete = 0;
-    // Initialize the stack
+  // for(uint64_t i = 1; i < sys->num_cpus; i++) {
+  //   __secondary_init_first_phase_complete = 0;
+  //   // Initialize the stack
 
-    void *stack_base = malloc(4096);
-    if(stack_base == NULL) {
-      INIT_ERROR("Could not allocate a stack for secondary core: %u\n", i);
-      return -1;
-    }
-    stack_base += 4096;
+  //   void *stack_base = malloc(4096);
+  //   if(stack_base == NULL) {
+  //     INIT_ERROR("Could not allocate a stack for secondary core: %u\n", i);
+  //     return -1;
+  //   }
+  //   stack_base += 4096;
 
-    mpidr_el1_t mpid;
-    mpid.raw = 0;
-    mpid.aff0 = sys->cpus[i]->aff0;
-    mpid.aff1 = sys->cpus[i]->aff1;
-    mpid.aff2 = sys->cpus[i]->aff2;
-    mpid.aff3 = sys->cpus[i]->aff3;
+  //   mpidr_el1_t mpid;
+  //   mpid.raw = 0;
+  //   mpid.aff0 = sys->cpus[i]->aff0;
+  //   mpid.aff1 = sys->cpus[i]->aff1;
+  //   mpid.aff2 = sys->cpus[i]->aff2;
+  //   mpid.aff3 = sys->cpus[i]->aff3;
 
-    INIT_PRINT("Trying to start secondary core: %u\n", i);
-    if(psci_cpu_on(mpid.raw, (void*)secondary_start, (uint64_t)stack_base)) {
-      INIT_ERROR("PSCI Error: psci_cpu_on failed for CPU %u!\n", i);
-    }
+  //   INIT_PRINT("Trying to start secondary core: %u\n", i);
+  //   if(psci_cpu_on(mpid.raw, (void*)secondary_start, (uint64_t)stack_base)) {
+  //     INIT_ERROR("PSCI Error: psci_cpu_on failed for CPU %u!\n", i);
+  //   }
 
-    while(!__secondary_init_first_phase_complete) {
-      // Wait for the secondary cpu to finish the first phase
-      // (We need to start them one by one because atomics aren't enabled yet)
-    }
-  }
+  //   while(!__secondary_init_first_phase_complete) {
+  //     // Wait for the secondary cpu to finish the first phase
+  //     // (We need to start them one by one because atomics aren't enabled yet)
+  //   }
+  // }
 
-  // All of the CPU's are past the first stage (and should have enabled MMU's)
+  // // All of the CPU's are past the first stage (and should have enabled MMU's)
 
-  INIT_PRINT("All CPU's are past the first stage!\n");
-  INIT_PRINT("Enabling atomics\n");
-  extern int __atomics_enabled;
-  __atomics_enabled = 1;
-  INIT_PRINT("Atomics enabled!\n");
+  // INIT_PRINT("All CPU's are past the first stage!\n");
+  // INIT_PRINT("Enabling atomics\n");
+  // extern int __atomics_enabled;
+  // __atomics_enabled = 1;
+  // INIT_PRINT("Atomics enabled!\n");
   return 0;
 }
 
 static int finish_secondaries(struct sys_info *sys) {
-  INIT_PRINT("Starting CPU 1's second phase...\n");
-  __secondary_init_second_phase_token = 1;
+  // INIT_PRINT("Starting CPU 1's second phase...\n");
+  // __secondary_init_second_phase_token = 1;
 
-  while(__secondary_init_second_phase_token < sys->num_cpus) {}
-  INIT_PRINT("Finished initializing all CPU's!\n");
+  // while(__secondary_init_second_phase_token < sys->num_cpus) {}
+  // INIT_PRINT("Finished initializing all CPU's!\n");
   return 0;
 }
 
@@ -295,9 +295,10 @@ static int finish_secondaries(struct sys_info *sys) {
 uint16_t
 vga_make_entry (char c, uint8_t color)
 {
-    uint16_t c16 = c;
-    uint16_t color16 = color;
-    return c16 | color16 << 8;
+    // uint16_t c16 = c;
+    // uint16_t color16 = color;
+    // return c16 | color16 << 8;
+    return 0;
 }
 // (I want to stick this somewhere else later on (or make it not needed))
 //
@@ -380,178 +381,178 @@ __attribute__((annotate("nohook")))
 #endif
 void * init_boot_stack(unsigned long dtb, unsigned long x1, unsigned long x2, unsigned long x3) {
 
-  // Zero out .bss
-  nk_low_level_memset((void*)_bssStart, 0, (uint64_t)_bssEnd - (uint64_t)_bssStart);
+  // // Zero out .bss
+  // nk_low_level_memset((void*)_bssStart, 0, (uint64_t)_bssEnd - (uint64_t)_bssStart);
  
-  // Enable the FPU
-  fpu_init_percpu(&nautilus_info);
+  // // Enable the FPU
+  // fpu_init_percpu(&nautilus_info);
 
-  nautilus_info.sys.dtb = (struct dtb_fdt_header*)dtb;
+  // nautilus_info.sys.dtb = (struct dtb_fdt_header*)dtb;
 
-  mpidr_el1_t mpidr_el1;
-  LOAD_SYS_REG(MPIDR_EL1, mpidr_el1.raw);
-  nautilus_info.sys.bsp_aff0 = mpidr_el1.aff0;
-  nautilus_info.sys.bsp_aff1 = mpidr_el1.aff1;
-  nautilus_info.sys.bsp_aff2 = mpidr_el1.aff2;
-  nautilus_info.sys.bsp_aff3 = mpidr_el1.aff3;
+  // mpidr_el1_t mpidr_el1;
+  // LOAD_SYS_REG(MPIDR_EL1, mpidr_el1.raw);
+  // nautilus_info.sys.bsp_aff0 = mpidr_el1.aff0;
+  // nautilus_info.sys.bsp_aff1 = mpidr_el1.aff1;
+  // nautilus_info.sys.bsp_aff2 = mpidr_el1.aff2;
+  // nautilus_info.sys.bsp_aff3 = mpidr_el1.aff3;
 
-  nk_handle_init_stage_silent();
+  // nk_handle_init_stage_silent();
 
-  printk("initializing in EL%u\n", arm64_get_current_el());
+  // printk("initializing in EL%u\n", arm64_get_current_el());
 
-  per_cpu_sys_ctrl_reg_init();
+  // per_cpu_sys_ctrl_reg_init();
 
-  nk_handle_init_stage_static();
+  // nk_handle_init_stage_static();
   
-  // Setup the temporary boot-time allocator
-  mm_boot_init(dtb);
+  // // Setup the temporary boot-time allocator
+  // mm_boot_init(dtb);
  
-  // Initialize SMP using the dtb
-  arch_smp_early_init(&nautilus_info);
+  // // Initialize SMP using the dtb
+  // arch_smp_early_init(&nautilus_info);
 
-  // Set our thread pointer id register for the BSP
-  if(smp_init_tpidr()) {
-    INIT_ERROR("Could not set TPIDR_EL1 for BSP!\n");
-    panic("Could not set TPIDR_EL1 for BSP!\n");
-  }
+  // // Set our thread pointer id register for the BSP
+  // if(smp_init_tpidr()) {
+  //   INIT_ERROR("Could not set TPIDR_EL1 for BSP!\n");
+  //   panic("Could not set TPIDR_EL1 for BSP!\n");
+  // }
   
-  // Initialize NUMA
-  if(arch_numa_init(&(nautilus_info.sys))) {
-    INIT_ERROR("Could not get NUMA information!\n");
-    panic("Could not get NUMA information!\n");
-  }
+  // // Initialize NUMA
+  // if(arch_numa_init(&(nautilus_info.sys))) {
+  //   INIT_ERROR("Could not get NUMA information!\n");
+  //   panic("Could not get NUMA information!\n");
+  // }
 
-  nk_handle_init_stage_boot();
+  // nk_handle_init_stage_boot();
 
-  // Can't go in a "boot" init function because it disables the boot allocator
-  nk_kmem_init();
-  mm_boot_kmem_init();
+  // // Can't go in a "boot" init function because it disables the boot allocator
+  // nk_kmem_init();
+  // mm_boot_kmem_init();
 
-  nk_handle_init_stage_kmem();
+  // nk_handle_init_stage_kmem();
 
-  // Do this early to speed up the boot process with data caches enabled
-  // (Plus atomics might not work without cacheability because ARM is weird)
-  if(arch_paging_init(&(nautilus_info.sys.mem), (void*)dtb)) {
-    INIT_ERROR("Failed to initialize paging!\n");
-    panic("Failed to initialize paging globally!\n");
-  }
+  // // Do this early to speed up the boot process with data caches enabled
+  // // (Plus atomics might not work without cacheability because ARM is weird)
+  // if(arch_paging_init(&(nautilus_info.sys.mem), (void*)dtb)) {
+  //   INIT_ERROR("Failed to initialize paging!\n");
+  //   panic("Failed to initialize paging globally!\n");
+  // }
 
-  per_cpu_paging_init();
+  // per_cpu_paging_init();
  
-  if(start_secondaries(&(nautilus_info.sys))) {
-    INIT_ERROR("Failed to start secondaries!\n");
-    panic("Failed to start secondaries!\n");
-  }
+  // if(start_secondaries(&(nautilus_info.sys))) {
+  //   INIT_ERROR("Failed to start secondaries!\n");
+  //   panic("Failed to start secondaries!\n");
+  // }
   
-  nk_gpio_init();
+  // nk_gpio_init();
 
-  nk_wait_queue_init();
-  nk_future_init();
-  nk_timer_init();
-  nk_rand_init(nautilus_info.sys.cpus[my_cpu_id()]);
-  nk_semaphore_init();
-  nk_msg_queue_init();
+  // nk_wait_queue_init();
+  // nk_future_init();
+  // nk_timer_init();
+  // nk_rand_init(nautilus_info.sys.cpus[my_cpu_id()]);
+  // nk_semaphore_init();
+  // nk_msg_queue_init();
 
-  nk_sched_init(&sched_cfg);
+  // nk_sched_init(&sched_cfg);
 
-  nk_thread_group_init();
-  nk_group_sched_init();
+  // nk_thread_group_init();
+  // nk_group_sched_init();
 
-  init_core_barrier(&(nautilus_info.sys));
+  // init_core_barrier(&(nautilus_info.sys));
 
-  return get_cur_thread()->rsp;
+  // return get_cur_thread()->rsp;
 }
 
 void init_threaded(void) {
-  INIT_DEBUG("Swapped to the thread stack!\n");
+//   INIT_DEBUG("Swapped to the thread stack!\n");
 
-  nk_thread_name(get_cur_thread(), "init");
+//   nk_thread_name(get_cur_thread(), "init");
 
-  nk_handle_init_stage_subsys();
+//   nk_handle_init_stage_subsys();
 
-#ifdef NAUT_CONFIG_OF_PCI 
-  if(!of_pci_init()) {
-    pci_dump_device_list();
-  }
-#endif
+// #ifdef NAUT_CONFIG_OF_PCI 
+//   if(!of_pci_init()) {
+//     pci_dump_device_list();
+//   }
+// #endif
 
-#if defined(NAUT_CONFIG_GIC_VERSION_2) || defined(NAUT_CONFIG_GIC_VERSION_2M)
-  if(gicv2_init()) {
-    panic("Failed to initialize GICv2!\n");  
-  } 
-#elif defined(NAUT_CONFIG_GIC_VERSION_3)
-  if(gicv3_init()) {
-    panic("Failed to initialize GICv3!\n");  
-  }
-#else
-#error "Invalid GIC Version!"
-#endif
+// #if defined(NAUT_CONFIG_GIC_VERSION_2) || defined(NAUT_CONFIG_GIC_VERSION_2M)
+//   if(gicv2_init()) {
+//     panic("Failed to initialize GICv2!\n");  
+//   } 
+// #elif defined(NAUT_CONFIG_GIC_VERSION_3)
+//   if(gicv3_init()) {
+//     panic("Failed to initialize GICv3!\n");  
+//   }
+// #else
+// #error "Invalid GIC Version!"
+// #endif
 
-#if defined(NAUT_CONFIG_GIC_VERSION_2) || defined(NAUT_CONFIG_GIC_VERSION_2M)
-  if(gicv2_percpu_init()) {
-    panic("Failed to initialize GICv2 on the BSP!\n");  
-  }
-#elif defined(NAUT_CONFIG_GIC_VERSION_3)
-  if(gicv3_percpu_init()) {
-    panic("Failed to initialize GICv3 on the BSP!\n");
-  }
-#else
-#error "Invalid GIC Version!"
-#endif
+// #if defined(NAUT_CONFIG_GIC_VERSION_2) || defined(NAUT_CONFIG_GIC_VERSION_2M)
+//   if(gicv2_percpu_init()) {
+//     panic("Failed to initialize GICv2 on the BSP!\n");  
+//   }
+// #elif defined(NAUT_CONFIG_GIC_VERSION_3)
+//   if(gicv3_percpu_init()) {
+//     panic("Failed to initialize GICv3 on the BSP!\n");
+//   }
+// #else
+// #error "Invalid GIC Version!"
+// #endif
 
-  INIT_DEBUG("Initialized the Interrupt Controller\n");
+//   INIT_DEBUG("Initialized the Interrupt Controller\n");
 
-  if(smp_setup_xcall_bsp(nautilus_info.sys.cpus[my_cpu_id()])) {
-      INIT_WARN("Failed to initialize XCALL on bsp!\n");
-  }
+//   if(smp_setup_xcall_bsp(nautilus_info.sys.cpus[my_cpu_id()])) {
+//       INIT_WARN("Failed to initialize XCALL on bsp!\n");
+//   }
 
-  // Now we should be able to install irq handlers
-#ifdef NAUT_CONFIG_VIRTIO_PCI
-  virtio_pci_init(&nautilus_info);
-  INIT_DEBUG("virtio pci inited!\n");
-#endif
+//   // Now we should be able to install irq handlers
+// #ifdef NAUT_CONFIG_VIRTIO_PCI
+//   virtio_pci_init(&nautilus_info);
+//   INIT_DEBUG("virtio pci inited!\n");
+// #endif
 
-  global_timer_init();
+//   global_timer_init();
 
-  // Let the secondary processors into their second phase
-  finish_secondaries(&(nautilus_info.sys)); 
+//   // Let the secondary processors into their second phase
+//   finish_secondaries(&(nautilus_info.sys)); 
 
-  INIT_DEBUG("Starting the scheduler on BSP\n");
-  // Start the scheduler
-  nk_sched_start(); 
-  INIT_DEBUG("Scheduler started!\n");
+//   INIT_DEBUG("Starting the scheduler on BSP\n");
+//   // Start the scheduler
+//   nk_sched_start(); 
+//   INIT_DEBUG("Scheduler started!\n");
 
-  /*
-  INIT_DEBUG("Printing CPU states:\n");
-  for(int i = 0; i < nautilus_info.sys.num_cpus; i++) {
-    INIT_DEBUG("Dumping CPU %u\n", i);
-    dump_cpu(nautilus_info.sys.cpus[i]);
-  }
-  */
+//   /*
+//   INIT_DEBUG("Printing CPU states:\n");
+//   for(int i = 0; i < nautilus_info.sys.num_cpus; i++) {
+//     INIT_DEBUG("Dumping CPU %u\n", i);
+//     dump_cpu(nautilus_info.sys.cpus[i]);
+//   }
+//   */
 
-  //enable the timer
-  percpu_timer_init();
-  arch_set_timer(arch_realtime_to_cycles(sched_cfg.aperiodic_quantum));
+//   //enable the timer
+//   percpu_timer_init();
+//   arch_set_timer(arch_realtime_to_cycles(sched_cfg.aperiodic_quantum));
  
-  nk_handle_init_stage_sched();
+//   nk_handle_init_stage_sched();
 
-  // Enable interrupts
-  arch_enable_ints(); 
+//   // Enable interrupts
+//   arch_enable_ints(); 
 
-  INIT_PRINT("Interrupts are now enabled\n"); 
+//   INIT_PRINT("Interrupts are now enabled\n"); 
 
-  nk_handle_init_stage_driver();
+//   nk_handle_init_stage_driver();
 
-  nk_handle_init_stage_fs();
+//   nk_handle_init_stage_fs();
 
-#ifdef NAUT_CONFIG_IPI_STRESS
-  ipi_stress_init();
-#endif
+// #ifdef NAUT_CONFIG_IPI_STRESS
+//   ipi_stress_init();
+// #endif
 
-  nk_handle_init_stage_launch();
+//   nk_handle_init_stage_launch();
 
-  INIT_PRINT("Promoting init thread to idle\n");
+//   INIT_PRINT("Promoting init thread to idle\n");
 
-  idle(NULL,NULL);
+//   idle(NULL,NULL);
 }
 
