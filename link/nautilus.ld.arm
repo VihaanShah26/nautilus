@@ -2,7 +2,7 @@
 MEMORY
 {
     FLASH (rwx) : ORIGIN = 0x0, LENGTH = 1000000
-    RAM   (rwx): ORIGIN = 0x186A0, LENGTH = 64000
+    RAM   (rwx): ORIGIN = 0x186A0, LENGTH = 4294967296
 }
 #else 
 #error "Please select a specific ARM SoC in the config" 
@@ -20,20 +20,22 @@ SECTIONS
         *(.text*)
 	_textEnd = .;
     } > FLASH
-    .data :{
+    .data ALIGN (0x00072207) :{
     	_dataStart = .; 
 	*(.sdata .sdata.*) /* do not need to distinguish this from .data */
     	/* . = ALIGN(16); */
    	 *(.data .data.*)
-    	*(.gnu.linkonce.d*)
+    	*(.gnu.linkonce.d*) 
     	/* . = ALIGN(16); */
     	*(.tdata .tdata.*)
 	_dataEnd = .; 
-    } >FLASH
+    } >RAM
+    /*
  .got ALIGN(0x1000) : {
       *(.got*)
       *(.gnu.linkconce.got*)
   }>RAM
+  */
 /* Needs to be RW */
 #include "init_stages.ld.inc"
 
