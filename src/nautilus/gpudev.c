@@ -52,6 +52,10 @@ static spinlock_t state_lock;
 
 #endif
 
+int rand() {
+	return 1; 
+}
+
 static int 
 nk_gpu_dev_init()
 {

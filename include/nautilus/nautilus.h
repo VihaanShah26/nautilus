@@ -249,15 +249,16 @@ struct naut_info {
 };
 
 #ifdef __NAUTILUS_MAIN__
-struct naut_info nautilus_info;
-#else
+struct naut_info nautilus_info; 
+#else 
 extern struct naut_info nautilus_info;
-#endif
+#endif 
 
 static inline struct naut_info*
 nk_get_nautilus_info (void)
 {
     return &nautilus_info;
+    // return 0; 
 }
 
 // Slap this on the front of a function that should be 'interrupt' style

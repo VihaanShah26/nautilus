@@ -153,7 +153,7 @@ ifeq ($(OVERRIDE_LINK_RULE),)
 $(NAUT_BIN): $(LD_SCRIPT) $(NAUT_OBJ)
 	$(call quiet-cmd,LD,$(NAUT_BIN_NAME))
 	$(Q)$(LD) $(LDFLAGS) -T$(LD_SCRIPT) \
-		$(NAUT_OBJ) -lgcc -o $(NAUT_BIN) src/arch/arm/rand.o
+		$(NAUT_OBJ) -lgcc -o $(NAUT_BIN)
 endif
 
 # Linker Script Generation

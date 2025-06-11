@@ -67,19 +67,21 @@
 
 #include<nautilus/of/dt.h>
 
-#include<arch/arm64/unimpl.h>
-#include<arch/arm64/sys_reg.h>
-#include<arch/arm64/excp.h>
-#include<arch/arm64/timer.h>
-#include<arch/arm64/psci.h>
-#include<arch/arm64/paging.h>
-#include<arch/arm64/fpu.h>
+#include<arch/arm/unimpl.h>
+#include<arch/arm/sys_reg.h>
+// #include<arch/arm/excp.h>
+#include<arch/arm/timer.h>
+#include<arch/arm/psci.h>
+#include<arch/arm/paging.h>
+#include<arch/arm/fpu.h>
 
 #include<dev/pci.h>
 
 #ifdef NAUT_CONFIG_OF_PCI
 #include<dev/pci/of.h>
 #endif
+
+#define NAUT_CONFIG_GIC_VERSION_2; 
 
 #if defined(NAUT_CONFIG_GIC_VERSION_2) || defined(NAUT_CONFIG_GIC_VERSION_2M)
 #include<dev/gicv2.h>
@@ -179,6 +181,7 @@ void * secondary_init_boot_stack(void) {
 
   // We should have atomics and kmem now
   INIT_PRINT("Starting second phase of secondary_init\n");
+  
 
 #if defined(NAUT_CONFIG_GIC_VERSION_2) || defined(NAUT_CONFIG_GIC_VERSION_2M)
   if(gicv2_percpu_init()) {
