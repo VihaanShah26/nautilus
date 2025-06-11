@@ -249,7 +249,7 @@ thread_push (nk_thread_t * t, uint32_t x)
 void
 thread_setup_init_stack (nk_thread_t * t, nk_thread_fun_t fun, void * arg)
 {
-
+/*
   if(t == NULL) {
     ERROR_PRINT("Trying to initialize the stack of a NULL thread!\n");
     panic("Trying to initialize the stack of a NULL thread!\n");
@@ -281,11 +281,12 @@ thread_setup_init_stack (nk_thread_t * t, nk_thread_fun_t fun, void * arg)
 #define GPR_SAVE_SIZE      120
 #define STACK_SAVE_SIZE    64
 #define THREAD_SETUP_SIZE  (STACK_SAVE_SIZE + GPR_SAVE_SIZE)
-
+*/
     /*
      * if this is a thread fork, this part is taken care of
      * in _thread_fork(). There is no function!
      */
+	/*
     if (fun) {
         thread_push(t, (uint64_t)&thread_cleanup);
         thread_push(t, (uint64_t)fun);
@@ -298,19 +299,22 @@ thread_setup_init_stack (nk_thread_t * t, nk_thread_fun_t fun, void * arg)
     thread_push(t, (uint64_t)&nk_thread_entry);
     thread_push(t, 0);                                   // dummy error code
     thread_push(t, 0);                                   // intr no
+							 // */
 
     /*
      * if we have a function, it needs an input argument
      * so we overwrite its RDI
      */
+	/*
     if (fun) {
         *(uint64_t*)(t->rsp-GPR_RDI_OFFSET) = (uint64_t)arg;
     }
-
+*/
     /*
      * if this is a thread fork, we return 0 to the child
      * via RAX - note that _fork_return will not restore RAX
      */
+	/*
     if (!fun) {
         *(uint64_t*)(t->rsp-GPR_RAX_OFFSET) = 0;
     }
@@ -361,6 +365,7 @@ thread_setup_init_stack (nk_thread_t * t, nk_thread_fun_t fun, void * arg)
 #endif
 
     t->rsp -= GPR_SAVE_SIZE;                             // account for the GPRS;
+*/
 }
 
 

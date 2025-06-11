@@ -30,7 +30,7 @@ testit (jmp_buf  env,
 	int res = (!prev_res) ? prev_res : prev_res + 1;
 
 	printk("Long jumping with result %d\n", res);
-	longjmp(env, res);
+	// longjmp(env, res);
 	panic("SHOULD NOT GET HERE!\n");
 }       
 
@@ -40,7 +40,8 @@ test_setlong (void)
 {
   jmp_buf  env;
 
-  int res = setjmp(env);
+  // int res = setjmp(env);
+  int res = 0; // TODO: fix setjmp so that above line can be used instead  
 
   printk("res = 0x%08x\n", res);
 

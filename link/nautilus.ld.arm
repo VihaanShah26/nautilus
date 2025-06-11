@@ -13,6 +13,7 @@ ENTRY(reset_handler)
 SECTIONS
 {
      PROVIDE(kernel_start = .);
+    _loadStart = .;
     .text : {
 	_textStart = .;
         *(.vectors*)
@@ -28,7 +29,7 @@ SECTIONS
     	/* . = ALIGN(16); */
     	*(.tdata .tdata.*)
 	_dataEnd = .; 
-    } > RAM
+    } >FLASH
  .got ALIGN(0x1000) : {
       *(.got*)
       *(.gnu.linkconce.got*)
@@ -50,7 +51,7 @@ SECTIONS
     . = ALIGN(16);
     *(.tbss .tbss*);
     _bssEnd = .;
-   }>RAM
+   }>FLASH /* changed this from RAM to FLASH */
 
     .stack :{
 	*(.stack*)

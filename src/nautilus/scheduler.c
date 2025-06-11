@@ -567,7 +567,7 @@ static void           set_timer(rt_scheduler *scheduler,
 				rt_thread *thread, 
 				uint64_t now);
 
-static void           handle_special_switch(rt_status what, int have_lock, uint8_t flags, void (*release_callback)(void*), void *release_state);
+// static void           handle_special_switch(rt_status what, int have_lock, uint8_t flags, void (*release_callback)(void*), void *release_state);
 
 static inline uint64_t get_min_per(rt_priority_queue *runnable, rt_priority_queue *queue, rt_thread *thread);
 static inline uint64_t get_avg_per(rt_priority_queue *runnable, rt_priority_queue *pending, rt_thread *thread);
@@ -1607,7 +1607,7 @@ int nk_sched_make_runnable(struct nk_thread *thread, int cpu, int admit)
 
 void nk_sched_exit(spinlock_t *lock_to_release)
 {
-    handle_special_switch(EXITING,0,0,lock_to_release ? (void (*)(void*))spin_unlock : 0 ,(void*)lock_to_release);
+    // handle_special_switch(EXITING,0,0,lock_to_release ? (void (*)(void*))spin_unlock : 0 ,(void*)lock_to_release);
     // we should not come back!
     panic("Returned to finished thread!\n");
 }
@@ -2927,7 +2927,7 @@ int nk_sched_thread_change_constraints(struct nk_sched_constraints *constraints)
 	}
 	// we are now on the aperiodic run queue
 	// so we need to get running again with our new constraints
-	handle_special_switch(CHANGING,1,_local_flags,0,0);
+	// handle_special_switch(CHANGING,1,_local_flags,0,0);
 	// we've now released the lock, so reacquire
 	LOCAL_LOCK(scheduler);
     }
@@ -2954,7 +2954,7 @@ int nk_sched_thread_change_constraints(struct nk_sched_constraints *constraints)
 	// we are now aperioidic
 	// since we are again on the run queue
 	// we need to kick ourselves off the cp
-	handle_special_switch(CHANGING,1,_local_flags,0,0);
+	// handle_special_switch(CHANGING,1,_local_flags,0,0);
 	// when we come back, we note that we have failed
 	// we also have no lock
 	goto out_bad_no_unlock;
@@ -2966,7 +2966,7 @@ int nk_sched_thread_change_constraints(struct nk_sched_constraints *constraints)
 	DUMP_RT_PENDING(scheduler,"pending before handle special switch");
 	DUMP_APERIODIC(scheduler,"aperiodic before handle special switch");
 
-	handle_special_switch(CHANGING,1,_local_flags,0,0);
+	// handle_special_switch(CHANGING,1,_local_flags,0,0);
 
 	// we now have released lock and interrupts are back to prior
 
@@ -3243,6 +3243,7 @@ extern void nk_thread_switch_exit_helper(nk_thread_t *new, rt_status *statusp, r
 //     to the state of the thread we are switching to
 static void handle_special_switch(rt_status what, int have_lock, uint8_t flags, void (*release_callback)(void*), void *release_state)
 {
+	/*
     int did_preempt_disable = 0;
     int no_switch=0;
 
@@ -3345,7 +3346,7 @@ static void handle_special_switch(rt_status what, int have_lock, uint8_t flags, 
     // our context will indicate interrupts off
     // when we switch away, we will leave rflags.if=0 on
     // the stack and preemption enabled
-    nk_thread_switch(n);
+    // nk_thread_switch(n);
     
     DEBUG("After return from switch (back in %llu \"%s\")\n", c->tid, c->name);
 
@@ -3364,6 +3365,7 @@ out_good:
     // and now we restore the interrupt state to 
     // what we had on entry
     irq_enable_restore(flags);
+    */
 }
 
 /*
@@ -4946,7 +4948,7 @@ handle_cores (char * buf, void * priv)
       cpu = NK_NULL_CPU_ID; 
     }
 
-    nk_sched_dump_cores(cpu);
+    // nk_sched_dump_cores(cpu);
 
     return 0;
 }
@@ -5044,7 +5046,7 @@ handle_time (char * buf, void * priv)
         cpu = NK_NULL_CPU_ID; 
     }
 
-    nk_sched_dump_time(cpu);
+    // nk_sched_dump_time(cpu);
 
     return 0;
 }
