@@ -16,7 +16,6 @@ endif
 ifdef NAUT_CONFIG_ARCH_ARM
 GCC_CROSS_COMPILE ?= arm-none-eabi-
 CFLAGS += -B/usr/bin/arm-none-eabi-
-CFLAGS += -mcpu=cortex-m3 -mthumb
 AFLAGS += -B/usr/bin/arm-none-eabi-
 endif
 

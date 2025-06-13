@@ -111,7 +111,8 @@ CFLAGS += $(COMMON_FLAGS) \
 	  $(SUPRESSED_WARNINGS) \
 	  -fno-common \
 	  -Wstrict-overflow=5 \
-	  $(NAUT_INCLUDE)
+	  $(NAUT_INCLUDE) \
+	  #-mcpu=cortex-m33 -mthumb
 
 AFLAGS += $(COMMON_FLAGS) \
 	  $(NAUT_INCLUDE)

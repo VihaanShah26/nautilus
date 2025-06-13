@@ -12,7 +12,7 @@ QEMU_FLAGS += -m 2G
 qemu:
 	arm-none-eabi-as -mthumb -mcpu=$(CPU) -c src/arch/arm/asm/start.S -o src/arch/arm/asm/start.o
 	arm-none-eabi-ld -T link/nautilus.ld.arm src/arch/arm/asm/start.o -o src/arch/arm/asm/start.elf
-	qemu-system-arm -S -M $(BOARD) -cpu $(CPU) -kernel $(PROJECT).elf 
+	qemu-system-arm -M $(BOARD) -cpu $(CPU) -kernel $(PROJECT).elf 
 qemu-gdb: $(QEMU_DEPS)
 	$(call quiet-cmd,QEMU,)
 	$(QEMU) $(QEMU_FLAGS) -gdb tcp::1234 -S -no-reboot -no-shutdown

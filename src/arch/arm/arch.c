@@ -15,27 +15,27 @@
 void arch_enable_ints(void) {
 #ifdef NAUT_CONFIG_BEANDIP
   atomic_lock_release(in_time_hook);
-#else
-  __asm__ __volatile__ ("cpsie i");
+//#else
+  //__asm__ __volatile__ ("cpsie i");
 #endif
 }
 void arch_disable_ints(void) {
 #ifdef NAUT_CONFIG_BEANDIP
   while(atomic_lock_test_and_set(in_time_hook,1)) {}
-#else
-  __asm__ __volatile__ ("cpsid i");
+//#else
+//  __asm__ __volatile__ ("cpsid i");
 #endif
 }
 int arch_ints_enabled(void) {
-uint_t prim;
+uint_t prim = 0;
 
     // MRS (Move from Special register) → read PRIMASK into 'prim'
-    __asm__ __volatile__ (
-        "mrs %0, primask\n"
-        : "=r" (prim)    // output: prim ← PRIMASK
-        :                // no inputs
-        :                // no clobbers (FLAGS are untouched)
-    );
+     //__asm__ __volatile__ (
+       // "mrs %0, primask\n"
+        //: "=r" (prim)    // output: prim ← PRIMASK
+        //:                // no inputs
+        //:                // no clobbers (FLAGS are untouched)
+    //);
 
     // PRIMASK == 0 ⇒ interrupts enabled.  Return 1 in that case.
     return (prim == 0);
@@ -80,5 +80,5 @@ void arch_reserve_boot_regions(unsigned long mbd) {
 }
 
 void arch_relax(void) {
-  __asm__ __volatile__ ("yield");
+ // __asm__ __volatile__ ("yield");
 }
